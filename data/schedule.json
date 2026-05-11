@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ipl-1",
+    "series": "IPL 2026 - League Stage",
+    "match": "Match 68: KKR vs MI",
+    "date": "May 14, 2026",
+    "time": "07:30 PM IST",
+    "venue": "Eden Gardens, Kolkata",
+    "teams": ["Kolkata Knight Riders", "Mumbai Indians"]
+  },
+  {
+    "id": "ipl-2",
+    "series": "IPL 2026 - League Stage",
+    "match": "Match 70: RCB vs GT",
+    "date": "May 16, 2026",
+    "time": "07:30 PM IST",
+    "venue": "M. Chinnaswamy Stadium, Bengaluru",
+    "teams": ["Royal Challengers Bengaluru", "Gujarat Titans"]
+  },
+  {
+    "id": "pak-ban-2",
+    "series": "Pakistan vs Bangladesh Test Series",
+    "match": "2nd Test",
+    "date": "May 18, 2026",
+    "time": "10:00 AM PKT",
+    "venue": "National Stadium, Karachi",
+    "teams": ["Pakistan", "Bangladesh"]
+  },
+  {
+    "id": "ipl-q1",
+    "series": "IPL 2026 - Playoffs",
+    "match": "Qualifier 1: PBKS vs RCB",
+    "date": "May 19, 2026",
+    "time": "07:30 PM IST",
+    "venue": "Narendra Modi Stadium, Ahmedabad",
+    "teams": ["Punjab Kings", "Royal Challengers Bengaluru"]
+  },
+  {
+    "id": "eng-pak-1",
+    "series": "Pakistan tour of England",
+    "match": "1st T20I",
+    "date": "May 22, 2026",
+    "time": "10:30 PM PKT",
+    "venue": "Headingley, Leeds",
+    "teams": ["England", "Pakistan"]
+  }
+]

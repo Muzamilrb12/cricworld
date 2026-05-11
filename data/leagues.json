@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ipl",
+    "name": "IPL",
+    "fullName": "Indian Premier League",
+    "status": "LIVE",
+    "country": "India",
+    "teams": 10,
+    "logo": "IPL",
+    "officialUrl": "https://www.iplt20.com"
+  },
+  {
+    "id": "psl",
+    "name": "PSL",
+    "fullName": "Pakistan Super League",
+    "status": "Upcoming",
+    "country": "Pakistan",
+    "teams": 6,
+    "logo": "PSL",
+    "officialUrl": "https://www.psl-t20.com"
+  },
+  {
+    "id": "bbl",
+    "name": "BBL",
+    "fullName": "Big Bash League",
+    "status": "Recent",
+    "country": "Australia",
+    "teams": 8,
+    "logo": "BBL",
+    "officialUrl": "https://www.bigbash.com.au"
+  },
+  {
+    "id": "cpl",
+    "name": "CPL",
+    "fullName": "Caribbean Premier League",
+    "status": "Upcoming",
+    "country": "West Indies",
+    "teams": 6,
+    "logo": "CPL",
+    "officialUrl": "https://www.cplt20.com"
+  },
+  {
+    "id": "bpl",
+    "name": "BPL",
+    "fullName": "Bangladesh Premier League",
+    "status": "Recent",
+    "country": "Bangladesh",
+    "teams": 7,
+    "logo": "BPL",
+    "officialUrl": "https://www.tigercricket.com.bd"
+  },
+  {
+    "id": "sa20",
+    "name": "SA20",
+    "fullName": "South Africa T20",
+    "status": "LIVE",
+    "country": "South Africa",
+    "teams": 6,
+    "logo": "SA20",
+    "officialUrl": "https://www.sa20.co.za"
+  },
+  {
+    "id": "hundred",
+    "name": "The Hundred",
+    "fullName": "The Hundred",
+    "status": "Upcoming",
+    "country": "England",
+    "teams": 8,
+    "logo": "100",
+    "officialUrl": "https://www.thehundred.com"
+  },
+  {
+    "id": "mlc",
+    "name": "MLC",
+    "fullName": "Major League Cricket",
+    "status": "Upcoming",
+    "country": "USA",
+    "teams": 6,
+    "logo": "MLC",
+    "officialUrl": "https://www.majorleaguecricket.com"
+  }
+]

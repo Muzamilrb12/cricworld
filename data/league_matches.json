@@ -1,0 +1,15 @@
+{
+  "ipl": [
+    { "id": "ipl-m1", "teams": ["MI", "CSK"], "date": "2026-05-11", "time": "07:30 PM", "result": "CSK won by 4 wickets", "status": "Finished" },
+    { "id": "ipl-m2", "teams": ["RCB", "KKR"], "date": "2026-05-12", "time": "07:30 PM", "result": null, "status": "Upcoming" },
+    { "id": "ipl-m3", "teams": ["GT", "LSG"], "date": "2026-05-13", "time": "07:30 PM", "result": null, "status": "Upcoming" }
+  ],
+  "psl": [
+    { "id": "psl-m1", "teams": ["LQ", "IU"], "date": "2026-06-01", "time": "07:00 PM", "result": null, "status": "Upcoming" },
+    { "id": "psl-m2", "teams": ["PZ", "MS"], "date": "2026-06-02", "time": "07:00 PM", "result": null, "status": "Upcoming" }
+  ],
+  "sa20": [
+    { "id": "sa20-m1", "teams": ["SEC", "MICT"], "date": "2026-05-11", "time": "06:00 PM", "result": "SEC won by 2 runs", "status": "Finished" },
+    { "id": "sa20-m2", "teams": ["DSG", "JSK"], "date": "2026-05-12", "time": "06:00 PM", "result": null, "status": "Upcoming" }
+  ]
+}

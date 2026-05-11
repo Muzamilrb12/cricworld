@@ -1,0 +1,41 @@
+{
+  "live-pak-ban": [
+    {
+      "over": "34.5",
+      "bowler": "Shaheen Afridi",
+      "batter": "Shadman Islam",
+      "runs": "0",
+      "description": "Solid defense. Shaheen bowls a yorker-length delivery, Shadman jams it out to mid-off."
+    },
+    {
+      "over": "34.4",
+      "bowler": "Shaheen Afridi",
+      "batter": "Shadman Islam",
+      "runs": "4",
+      "description": "FOUR! Classy shot. Overpitched on the pads, Shadman flicks it through mid-wicket. The outfield is fast, and it races away."
+    },
+    {
+      "over": "34.3",
+      "bowler": "Shaheen Afridi",
+      "batter": "Najmul Hossain Shanto",
+      "runs": "W",
+      "description": "OUT! BOWLED! Absolute beauty from Shaheen! It swings in late, goes through the gate and rattles the stumps. Shanto is stunned."
+    },
+    {
+      "over": "34.2",
+      "bowler": "Shaheen Afridi",
+      "batter": "Najmul Hossain Shanto",
+      "runs": "0",
+      "description": "Good length outside off, left alone by the batter."
+    }
+  ],
+  "live-mi-csk": [
+    {
+      "over": "18.2",
+      "bowler": "Jasprit Bumrah",
+      "batter": "MS Dhoni",
+      "runs": "6",
+      "description": "SIX! Classic Dhoni! Bumrah misses the yorker by an inch, and Dhoni lofts it over long-on. The crowd is going wild!"
+    }
+  ]
+}

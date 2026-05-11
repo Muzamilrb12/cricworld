@@ -1,0 +1,34 @@
+[
+  {
+    "id": "vid-1",
+    "title": "Match Highlights: India vs South Africa | 4th T20I 2026",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "12:45",
+    "category": "Highlights"
+  },
+  {
+    "id": "vid-2",
+    "title": "Babar Azam's 100 vs Australia | Full Innings",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "08:20",
+    "category": "Players"
+  },
+  {
+    "id": "vid-3",
+    "title": "IPL 2026: MI vs CSK Thriller Final Over",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "15:10",
+    "category": "Leagues"
+  },
+  {
+    "id": "vid-4",
+    "title": "Top 10 Catches of the Year | Cricket 2026",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "05:45",
+    "category": "Best Moments"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "pakistan",
+    "name": "Pakistan",
+    "shortName": "PAK",
+    "captain": "Babar Azam (ODI/T20), Shan Masood (Test)",
+    "coach": "Jason Gillespie (Test), Gary Kirsten (White ball)",
+    "rankings": { "test": 6, "odi": 4, "t20i": 4 },
+    "recentMatches": ["Won vs SA", "Lost vs AUS", "Won vs NZ"],
+    "squad": ["Babar Azam", "Shaheen Afridi", "Mohammad Rizwan", "Naseem Shah", "Fakhar Zaman"]
+  },
+  {
+    "id": "india",
+    "name": "India",
+    "shortName": "IND",
+    "captain": "Rohit Sharma",
+    "coach": "Gautam Gambhir",
+    "rankings": { "test": 1, "odi": 1, "t20i": 1 },
+    "recentMatches": ["Won vs SA", "Won vs BAN", "Won vs SL"],
+    "squad": ["Rohit Sharma", "Virat Kohli", "Jasprit Bumrah", "Rishabh Pant", "Ravindra Jadeja"]
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "shortName": "AUS",
+    "captain": "Pat Cummins",
+    "coach": "Andrew McDonald",
+    "rankings": { "test": 2, "odi": 2, "t20i": 3 },
+    "recentMatches": ["Won vs PAK", "Won vs WI", "Lost vs IND"],
+    "squad": ["Pat Cummins", "Travis Head", "Mitchell Starc", "Steve Smith", "Josh Hazlewood"]
+  }
+]

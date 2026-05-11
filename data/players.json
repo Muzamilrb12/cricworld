@@ -1,0 +1,41 @@
+[
+  {
+    "id": "babar-azam",
+    "name": "Babar Azam",
+    "team": "Pakistan",
+    "role": "Batter",
+    "image": "BA",
+    "stats": {
+      "test": { "matches": 52, "runs": 3962, "avg": "45.86", "sr": "54.12", "100s": 9, "50s": 26 },
+      "odi": { "matches": 117, "runs": 5729, "avg": "56.72", "sr": "88.75", "100s": 19, "50s": 32 },
+      "t20i": { "matches": 119, "runs": 4145, "avg": "41.03", "sr": "129.08", "100s": 3, "50s": 36 }
+    },
+    "bio": "Babar Azam is a Pakistani international cricketer and former captain of the Pakistan national cricket team in all formats."
+  },
+  {
+    "id": "virat-kohli",
+    "name": "Virat Kohli",
+    "team": "India",
+    "role": "Batter",
+    "image": "VK",
+    "stats": {
+      "test": { "matches": 113, "runs": 8848, "avg": "49.15", "sr": "55.56", "100s": 29, "50s": 30 },
+      "odi": { "matches": 292, "runs": 13848, "avg": "58.67", "sr": "93.62", "100s": 50, "50s": 72 },
+      "t20i": { "matches": 125, "runs": 4188, "avg": "48.69", "sr": "137.04", "100s": 1, "50s": 38 }
+    },
+    "bio": "Virat Kohli is an Indian international cricketer and the former captain of the Indian national cricket team."
+  },
+  {
+    "id": "shaheen-afridi",
+    "name": "Shaheen Afridi",
+    "team": "Pakistan",
+    "role": "Bowler",
+    "image": "SA",
+    "stats": {
+      "test": { "matches": 29, "wickets": 113, "avg": "26.71", "eco": "3.08", "best": "6/51" },
+      "odi": { "matches": 53, "wickets": 104, "avg": "23.94", "eco": "5.45", "best": "6/35" },
+      "t20i": { "matches": 66, "wickets": 91, "avg": "20.36", "eco": "7.75", "best": "4/22" }
+    },
+    "bio": "Shaheen Shah Afridi is a Pakistani professional cricketer who bowls left-arm fast for the Pakistan national cricket team."
+  }
+]
