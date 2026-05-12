@@ -48,5 +48,14 @@ body {
     border: 1px solid var(--accent);
     box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
   }
+
+  @keyframes progress-shrink {
+    from { width: 100%; }
+    to { width: 0%; }
+  }
+
+  .animate-progress-shrink {
+    animation: progress-shrink 5s linear forwards;
+  }
 }
 

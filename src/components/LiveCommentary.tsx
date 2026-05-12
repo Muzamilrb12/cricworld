@@ -1,5 +1,6 @@
-'use client';
+"use client";
 import { useState, useEffect } from 'react';
+import { triggerNotification } from '@/lib/notifications';
 
 interface Ball {
   over: string;
@@ -21,16 +22,26 @@ export default function LiveCommentary({ initialCommentary, isLive }: { initialC
       let index = 3;
       const interval = setInterval(() => {
         if (index < initialCommentary.length) {
+          const ball = initialCommentary[index];
           setIsUpdating(true);
+          
           setTimeout(() => {
-            setDisplayedCommentary(prev => [initialCommentary[index], ...prev]);
+            setDisplayedCommentary(prev => [ball, ...prev]);
             setIsUpdating(false);
+
+            // TRIGGER NOTIFICATION
+            if (ball.runs === 'W') {
+              triggerNotification("OUT!", `${ball.bowler} takes the wicket of ${ball.batter}!`, 'wicket');
+            } else if (ball.runs === '4' || ball.runs === '6') {
+              triggerNotification(`${ball.runs} RUNS!`, `${ball.batter} hits a massive boundary off ${ball.bowler}!`, 'boundary');
+            }
+
             index++;
           }, 800);
         } else {
           clearInterval(interval);
         }
-      }, 5000); // New ball every 5 seconds
+      }, 5000); 
 
       return () => clearInterval(interval);
     } else {
