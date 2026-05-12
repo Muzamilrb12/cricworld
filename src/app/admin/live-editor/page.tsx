@@ -4,20 +4,26 @@ import { updateMatchScore } from './actions';
 import matchesData from '../../../../data/matches.json';
 
 export default function LiveScoreEditor() {
-  const [matches, setMatches] = useState(matchesData);
+  const [matches, setMatches] = useState(matchesData as any[]);
   const [selectedId, setSelectedId] = useState('');
   const [score, setScore] = useState('');
   const [overs, setOvers] = useState('');
   const [summary, setSummary] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const selectedMatch = matches.find(m => m.id === selectedId);
+  const selectedMatch = matches.find((m: any) => m.id === selectedId);
 
   useEffect(() => {
     if (selectedMatch) {
-      const battingTeam = selectedMatch.teams.find((t: any) => t.isBatting) as any;
-      setScore(battingTeam?.score || '');
-      setOvers(battingTeam?.overs || '');
+      if ((selectedMatch as any).innings) {
+        const lastInnings = (selectedMatch as any).innings[(selectedMatch as any).innings.length - 1];
+        setScore(lastInnings?.score || '');
+        setOvers(lastInnings?.overs || '');
+      } else if ((selectedMatch as any).teams) {
+        const battingTeam = (selectedMatch as any).teams.find((t: any) => t.isBatting) as any;
+        setScore(battingTeam?.score || '');
+        setOvers(battingTeam?.overs || '');
+      }
       setSummary(selectedMatch.summary || '');
     }
   }, [selectedId, selectedMatch]);

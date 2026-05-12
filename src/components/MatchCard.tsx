@@ -1,29 +1,42 @@
 import Link from "next/link";
 
-interface Team {
-  name: string;
-  shortName: string;
-  score: string;
-  overs: string;
-  isBatting: boolean;
-}
-
 interface MatchCardProps {
-  match: {
-    id: string;
-    title: string;
-    format: string;
-    venue: string;
-    status: string;
-    date?: string;
-    toss?: string;
-    teams: Team[];
-    summary: string;
-  };
+  match: any;
 }
 
 export default function MatchCard({ match }: MatchCardProps) {
   const isLive = match.status.toLowerCase() === "live";
+
+  // Build a unified teams array from either innings[] or teams[]
+  let displayTeams: { name: string; shortName: string; score: string; overs: string; isBatting: boolean }[] = [];
+
+  if (match.innings) {
+    // Group innings by team name
+    const teamMap: Record<string, { scores: string[]; overs: string }> = {};
+    match.innings.forEach((inn: any) => {
+      if (!teamMap[inn.team]) teamMap[inn.team] = { scores: [], overs: '' };
+      teamMap[inn.team].scores.push(inn.score);
+      teamMap[inn.team].overs = inn.overs;
+    });
+    const lastInnings = match.innings[match.innings.length - 1];
+    Object.entries(teamMap).forEach(([team, data]) => {
+      displayTeams.push({
+        name: team,
+        shortName: team.substring(0, 3).toUpperCase(),
+        score: data.scores.join(' & '),
+        overs: data.overs,
+        isBatting: lastInnings.team === team
+      });
+    });
+  } else if (match.teams) {
+    displayTeams = match.teams.map((t: any) => ({
+      name: t.name,
+      shortName: t.shortName,
+      score: t.score || '',
+      overs: t.overs || '',
+      isBatting: t.isBatting || false
+    }));
+  }
 
   return (
     <Link href={`/match/${match.id}`} className="block">
@@ -50,7 +63,7 @@ export default function MatchCard({ match }: MatchCardProps) {
         )}
         
         <div className="space-y-4 mb-6">
-          {match.teams.map((team, idx) => (
+          {displayTeams.map((team, idx) => (
             <div key={idx} className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center text-[10px] font-bold">
@@ -62,10 +75,10 @@ export default function MatchCard({ match }: MatchCardProps) {
                 </span>
               </div>
               <div className="text-right">
-                <span className={`text-xl font-bold ${team.score === "Upcoming" ? "text-muted-foreground" : "text-white"}`}>
-                  {team.score}
+                <span className={`text-xl font-bold ${!team.score ? "text-muted-foreground" : "text-white"}`}>
+                  {team.score || 'Yet to bat'}
                 </span>
-                {team.overs !== "0" && (
+                {team.overs && team.overs !== "0" && (
                   <p className="text-[10px] text-muted-foreground">{team.overs} Ov</p>
                 )}
               </div>
