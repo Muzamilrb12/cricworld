@@ -14,8 +14,8 @@ export async function fetchIplPointsTable() {
     await page.goto(url, { waitUntil: 'networkidle' });
     // Wait for the points table to be rendered
     await page.waitForSelector('table.ds-table');
-    const rows = await page.$$eval('table.ds-table tbody tr', rows =>
-      rows.map(row => {
+    const rows = await page.$$eval('table.ds-table tbody tr', (rows: Element[]) =>
+      rows.map((row: Element) => {
         const cells = Array.from(row.querySelectorAll('td')).map(td => td.textContent?.trim() ?? '');
         // Expected column order (as of ESPN design):
         // 0: Position, 1: Team, 2: Played, 3: Wins, 4: Losses, 5: Tied, 6: No Result, 7: Points, 8: Net RR, 9: Bonus (if any)

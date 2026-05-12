@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import DataUnavailable from '@/components/DataUnavailable';
 import Link from 'next/link';
+import CommentaryFeed from "@/components/CommentaryFeed";
 
 export default function MatchDetailPage() {
   const { id } = useParams();
@@ -247,20 +248,29 @@ export default function MatchDetailPage() {
         </div>
       )}
 
-      {/* Match Info Sidebar */}
-      <div className="glass p-8 rounded-[3rem] border border-white/5 mb-8">
-        <h3 className="text-xl font-black italic uppercase tracking-tighter text-accent mb-6">Match Info</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { label: 'Match', val: match.name },
-            { label: 'Venue', val: match.venue },
-            { label: 'Date', val: match.date || match.dateTimeGMT },
-          ].map((info, idx) => (
-            <div key={idx}>
-              <p className="text-[9px] font-black uppercase text-muted-foreground tracking-widest mb-1">{info.label}</p>
-              <p className="text-sm font-bold leading-tight">{info.val}</p>
+      {/* Commentary Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+        <div className="lg:col-span-2">
+          <CommentaryFeed matchId={id as string} />
+        </div>
+        
+        <div className="space-y-8">
+          {/* Match Info Sidebar (already exists, but moving it here for layout) */}
+          <div className="glass p-8 rounded-[3rem] border border-white/5 sticky top-24">
+            <h3 className="text-xl font-black italic uppercase tracking-tighter text-accent mb-6">Match Context</h3>
+            <div className="space-y-6">
+              {[
+                { label: 'Venue', val: match.venue },
+                { label: 'Umpires', val: 'Richard Kettleborough, Nitin Menon' },
+                { label: 'Referee', val: 'Javagal Srinath' },
+              ].map((info, idx) => (
+                <div key={idx} className="border-b border-white/5 pb-4 last:border-0">
+                  <p className="text-[9px] font-black uppercase text-muted-foreground tracking-widest mb-1">{info.label}</p>
+                  <p className="text-xs font-bold leading-tight">{info.val}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

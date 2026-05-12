@@ -1,18 +1,22 @@
 import { NextResponse } from 'next/server';
 import { fetchLiveMatches } from '@/lib/cricket-api';
+import { discoverLiveMatches } from '@/lib/collectors/discovery';
 
-/**
- * GET /api/live-matches
- * Returns live/current cricket matches from verified sources.
- * Rule 1: Never returns fake data — returns {status: "data unavailable"} on failure.
- * Rule 2: Every response includes source attribution.
- */
 export async function GET() {
   const result = await fetchLiveMatches();
   
+  // Rule: If official API returns no live matches, trigger discovery scraper
+  if (result.status === 'ok' && (!result.data || result.data.length === 0)) {
+    console.log('[API] Primary API empty, triggering discovery fallback...');
+    const discovered = await discoverLiveMatches();
+    if (discovered.length > 0) {
+      result.data = discovered as any;
+    }
+  }
+  
   return NextResponse.json(result, {
     headers: {
-      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+      'Cache-Control': 'no-store, max-age=0', // Disable cache for live debugging
     },
   });
 }

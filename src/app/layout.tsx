@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 import NotificationToast from "@/components/NotificationToast";
 import UserNav from "@/components/UserNav";
 import LiveScoreTicker from "@/components/LiveScoreTicker";
+import FloatingScoreboard from "@/components/FloatingScoreboard";
 
 export default function RootLayout({
   children,
@@ -37,6 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans relative">
         <NotificationToast />
+        <FloatingScoreboard />
         <header className="glass-header sticky top-0 z-50 w-full">
 
           <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
