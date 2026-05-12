@@ -74,14 +74,22 @@ export default function Home() {
           </div>
           <div className="space-y-6">
             {news.map((item: any) => (
-              <a href={`/news/${item.id}`} key={item.id} className="flex gap-4 p-4 rounded-2xl glass hover:bg-white/5 transition-colors cursor-pointer group">
-                <div className="w-32 h-24 bg-zinc-800 rounded-xl overflow-hidden shrink-0">
-                  <div className="w-full h-full bg-gradient-to-br from-zinc-700 to-zinc-900 animate-pulse group-hover:scale-105 transition-transform"></div>
+              <a href={`/news/${item.id}`} key={item.id} className="flex gap-6 p-6 rounded-[2rem] glass hover:bg-white/5 transition-colors cursor-pointer group border border-white/5 hover:border-accent/30">
+                <div className="w-40 h-28 bg-zinc-800 rounded-2xl overflow-hidden shrink-0 border border-white/5">
+                  <img 
+                    src={item.imageUrl} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
-                <div>
-                  <h3 className="font-bold group-hover:text-accent transition-colors mb-2 leading-tight">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">{item.summary}</p>
-                  <span className="text-[10px] text-muted-foreground uppercase mt-2 block">{item.time} • {item.category}</span>
+                <div className="flex-1 flex flex-col justify-center">
+                  <span className="text-[9px] text-accent font-black uppercase tracking-widest mb-2">{item.category}</span>
+                  <h3 className="font-black italic uppercase tracking-tighter group-hover:text-accent transition-colors mb-2 leading-tight line-clamp-2">{item.title}</h3>
+                  <div className="flex items-center gap-2 mt-auto">
+                    <span className="text-[10px] text-muted-foreground uppercase font-bold">{item.time}</span>
+                    <span className="w-1 h-1 bg-white/20 rounded-full"></span>
+                    <span className="text-[10px] text-muted-foreground uppercase font-bold">{item.author}</span>
+                  </div>
                 </div>
               </a>
             ))}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "t20wc-2024",
+    "name": "ICC Men's T20 World Cup 2024",
+    "host": "USA & West Indies",
+    "winner": "India",
+    "runnerUp": "South Africa",
+    "playerOfSeries": "Jasprit Bumrah",
+    "mostRuns": "Rahmanullah Gurbaz (281)",
+    "mostWickets": "Fazalhaq Farooqi (17)",
+    "date": "June 2024"
+  },
+  {
+    "id": "cwc-2023",
+    "name": "ICC Cricket World Cup 2023",
+    "host": "India",
+    "winner": "Australia",
+    "runnerUp": "India",
+    "playerOfSeries": "Virat Kohli",
+    "mostRuns": "Virat Kohli (765)",
+    "mostWickets": "Mohammed Shami (24)",
+    "date": "Oct-Nov 2023"
+  },
+  {
+    "id": "asia-cup-2023",
+    "name": "Asia Cup 2023",
+    "host": "Pakistan & Sri Lanka",
+    "winner": "India",
+    "runnerUp": "Sri Lanka",
+    "playerOfSeries": "Kuldeep Yadav",
+    "mostRuns": "Shubman Gill (302)",
+    "mostWickets": "Matheesha Pathirana (11)",
+    "date": "Aug-Sep 2023"
+  },
+  {
+    "id": "wtc-final-2023",
+    "name": "ICC World Test Championship Final 2023",
+    "host": "England",
+    "winner": "Australia",
+    "runnerUp": "India",
+    "playerOfSeries": "Travis Head",
+    "mostRuns": "Travis Head (163 in one inn)",
+    "mostWickets": "Nathan Lyon (5)",
+    "date": "June 2023"
+  }
+]

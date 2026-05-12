@@ -3,30 +3,44 @@
     "id": "news-1",
     "title": "Babar Azam reclaims top spot in ICC ODI rankings after superb century",
     "summary": "Babar's masterclass in the series opener has seen him jump ahead of Shubman Gill in the latest rankings update.",
-    "content": "Babar Azam has returned to the top of the ICC Men's ODI Batting Rankings following his match-winning century against Australia in Lahore. The Pakistan captain, who had briefly slipped to second place, showcased his trademark class with a 112-run knock off 98 balls. This performance propelled him past India's Shubman Gill, who had held the top spot for several months...",
+    "content": "Babar Azam has returned to the top of the ICC Men's ODI Batting Rankings following his match-winning century against Australia in Lahore. The Pakistan captain, who had briefly slipped to second place, showcased his trademark class with a 112-run knock off 98 balls. This performance propelled him past India's Shubman Gill, who had held the top spot for several months. The ranking update also saw significant gains for Travis Head and Virat Kohli, both of whom featured in the top 5 after consistent performances in their respective series.",
     "category": "ICC News",
     "date": "2026-05-11",
     "time": "2 hours ago",
-    "author": "Cricket Desk"
+    "author": "Cricket Desk",
+    "imageUrl": "/babar_azam_batting_1778566502418.png"
   },
   {
     "id": "news-2",
     "title": "IPL 2026: Mega auction dates announced, major retentions expected",
     "summary": "The BCCI has confirmed that the mega auction will take place in Riyadh this November with several big names on the list.",
-    "content": "The BCCI has officially announced that the much-anticipated IPL 2026 mega auction will be held in Riyadh, Saudi Arabia, on November 24 and 25. This move follows the trend of taking the auction overseas. Franchises are currently in the process of finalizing their retention lists, with rumors suggesting significant shake-ups in several major teams...",
+    "content": "The BCCI has officially announced that the much-anticipated IPL 2026 mega auction will be held in Riyadh, Saudi Arabia, on November 24 and 25. This move follows the trend of taking the auction overseas after the successful event in Dubai last year. Franchises are currently in the process of finalizing their retention lists, with rumors suggesting significant shake-ups in several major teams. Mumbai Indians and Chennai Super Kings are expected to retain their core, while teams like KKR and SRH might opt for a more radical approach.",
     "category": "IPL 2026",
     "date": "2026-05-11",
     "time": "5 hours ago",
-    "author": "IPL Insider"
+    "author": "IPL Insider",
+    "imageUrl": "/ipl_2026_action_1778566488517.png"
   },
   {
     "id": "news-3",
     "title": "Shaheen Afridi injury update: Star pacer expected to be fit for World T20",
     "summary": "Positive news for Pakistan fans as Shaheen Afridi's recovery from a minor calf strain is ahead of schedule.",
-    "content": "Pakistan's premier fast bowler Shaheen Shah Afridi is making rapid progress in his recovery from the calf strain he sustained during the PSL. The PCB medical team has expressed optimism that Afridi will be fully fit for the upcoming T20 World Cup. He has already started light training sessions at the National Cricket Academy...",
+    "content": "Pakistan's premier fast bowler Shaheen Shah Afridi is making rapid progress in his recovery from the calf strain he sustained during the PSL. The PCB medical team has expressed optimism that Afridi will be fully fit for the upcoming T20 World Cup. He has already started light training sessions at the National Cricket Academy and is expected to join the squad for the pre-tournament camp in England next week.",
     "category": "Injury Update",
     "date": "2026-05-10",
     "time": "1 day ago",
-    "author": "Medical Team"
+    "author": "Medical Team",
+    "imageUrl": "/shaheen_afridi_bowling_1778566520878.png"
+  },
+  {
+    "id": "news-4",
+    "title": "Rahul Dravid announced as owner of Dublin Guardians in new Euro T20 League",
+    "summary": "The legendary Indian cricketer makes a move into franchise ownership with the expansion of European cricket.",
+    "content": "In a surprising move, former India coach and legendary batsman Rahul Dravid has been announced as the primary owner of the Dublin Guardians, a franchise in the newly formed Euro T20 League. Dravid expressed his excitement about contributing to the growth of cricket in non-traditional markets. The league is set to feature several retired international stars and local European talent.",
+    "category": "Business",
+    "date": "2026-05-12",
+    "time": "1 hour ago",
+    "author": "Global Sports News",
+    "imageUrl": "/ipl_2026_action_1778566488517.png"
   }
 ]

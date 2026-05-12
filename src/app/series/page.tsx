@@ -1,72 +1,60 @@
-import leaguesData from "../../../data/leagues.json";
+import seriesData from "../../../data/series.json";
 
 export default function SeriesPage() {
-  const leagues = leaguesData || [];
-
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Cricket Series & Leagues</h1>
-        <p className="text-muted-foreground">Ongoing and upcoming tournaments worldwide</p>
+      <div className="mb-12">
+        <h1 className="text-4xl font-black italic uppercase tracking-tighter mb-2 text-accent">Series Archives</h1>
+        <p className="text-muted-foreground font-medium">Historical records and tournament summaries from major cricket events</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* International Series - Mocked for now */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <span className="w-2 h-6 bg-primary rounded-full"></span>
-            International Series
-          </h2>
-          <div className="space-y-4">
-            <div className="glass p-6 rounded-2xl hover:bg-white/5 transition-all">
-              <h3 className="font-bold text-lg mb-1">Australia tour of Pakistan, 2026</h3>
-              <p className="text-sm text-muted-foreground mb-4">3 Tests, 3 ODIs, 1 T20I</p>
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-accent bg-accent/10 px-2 py-1 rounded">Ongoing</span>
-                <span className="text-muted-foreground">May 2026 - Jun 2026</span>
-              </div>
+        {seriesData.map((series: any) => (
+          <div key={series.id} className="glass p-8 rounded-[2.5rem] border border-white/5 bg-gradient-to-br from-accent/5 to-transparent relative overflow-hidden group hover:border-accent/30 transition-all">
+            <div className="absolute top-0 right-0 p-8 opacity-5">
+              <span className="text-8xl font-black italic text-accent">{series.date.split(' ').pop()}</span>
             </div>
-            <div className="glass p-6 rounded-2xl hover:bg-white/5 transition-all">
-              <h3 className="font-bold text-lg mb-1">South Africa tour of India, 2026</h3>
-              <p className="text-sm text-muted-foreground mb-4">3 ODIs, 5 T20Is</p>
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-accent bg-accent/10 px-2 py-1 rounded">Ongoing</span>
-                <span className="text-muted-foreground">May 2026</span>
+            
+            <div className="relative z-10">
+              <div className="inline-block bg-accent/20 text-accent text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase tracking-widest border border-accent/20">
+                {series.host}
               </div>
-            </div>
-          </div>
-        </div>
+              <h2 className="text-3xl font-black italic uppercase tracking-tighter mb-8 leading-tight group-hover:text-accent transition-colors">
+                {series.name}
+              </h2>
+              
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
+                  <p className="text-[10px] text-muted-foreground uppercase font-black mb-2 tracking-widest">🏆 Champion</p>
+                  <p className="text-xl font-black italic text-accent">{series.winner}</p>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
+                  <p className="text-[10px] text-muted-foreground uppercase font-black mb-2 tracking-widest">🥈 Runner-up</p>
+                  <p className="text-xl font-black italic text-white/80">{series.runnerUp}</p>
+                </div>
+              </div>
 
-        {/* League Cricket */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <span className="w-2 h-6 bg-accent rounded-full"></span>
-            T20 Leagues
-          </h2>
-          <div className="space-y-4">
-            {leagues.map((league: any) => (
-              <div key={league.id} className="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="font-bold text-lg group-hover:text-accent transition-colors">{league.name}</h3>
-                    <p className="text-sm text-muted-foreground">{league.teams} Teams • {league.matches} Matches</p>
-                  </div>
-                  <div className="w-10 h-10 glass rounded-lg flex items-center justify-center font-bold text-xs text-accent">
-                    {league.logo}
-                  </div>
+              <div className="space-y-4 pt-6 border-t border-white/5">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground font-bold uppercase text-[10px] tracking-widest">Player of Series</span>
+                  <span className="font-bold text-white">{series.playerOfSeries}</span>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className={`px-2 py-1 rounded ${
-                    league.status === "Ongoing" ? "bg-accent/10 text-accent" : "bg-white/5 text-muted-foreground"
-                  }`}>
-                    {league.status}
-                  </span>
-                  <button className="text-accent hover:underline font-bold">Points Table →</button>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground font-bold uppercase text-[10px] tracking-widest">Most Runs</span>
+                  <span className="font-bold text-white">{series.mostRuns}</span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground font-bold uppercase text-[10px] tracking-widest">Most Wickets</span>
+                  <span className="font-bold text-white">{series.mostWickets}</span>
                 </div>
               </div>
-            ))}
+
+              <button className="w-full mt-8 py-3 rounded-2xl bg-white/5 border border-white/5 text-[10px] font-black uppercase tracking-widest hover:border-accent hover:text-accent transition-all">
+                View Full Scorecards →
+              </button>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

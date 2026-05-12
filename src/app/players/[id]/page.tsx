@@ -45,7 +45,7 @@ export default async function PlayerProfilePage({ params }: PageProps) {
             </div>
             <div className="glass p-6 rounded-3xl text-center border border-white/5">
               <p className="text-[10px] text-muted-foreground uppercase font-bold mb-1">Intl 100s</p>
-              <p className="text-3xl font-black italic text-accent">{player.stats.test.100s + player.stats.odi.100s + player.stats.t20i.100s}</p>
+              <p className="text-3xl font-black italic text-accent">{player.stats.test["100s"] + player.stats.odi["100s"] + player.stats.t20i["100s"]}</p>
             </div>
           </div>
         </div>
@@ -125,11 +125,11 @@ export default async function PlayerProfilePage({ params }: PageProps) {
                       <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/5">
                         <div className="bg-white/5 rounded-xl p-2 text-center">
                           <p className="text-[8px] text-muted-foreground uppercase font-bold">100s</p>
-                          <p className="font-black italic text-lg">{s.100s}</p>
+                          <p className="font-black italic text-lg">{s["100s"]}</p>
                         </div>
                         <div className="bg-white/5 rounded-xl p-2 text-center">
                           <p className="text-[8px] text-muted-foreground uppercase font-bold">50s</p>
-                          <p className="font-black italic text-lg">{s.50s}</p>
+                          <p className="font-black italic text-lg">{s["50s"]}</p>
                         </div>
                       </div>
                     </div>
