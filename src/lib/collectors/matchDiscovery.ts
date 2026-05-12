@@ -1,3 +1,5 @@
+import * as cheerio from 'cheerio';
+
 export async function discoverLiveMatches() {
   const headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -21,7 +23,7 @@ export async function discoverLiveMatches() {
     const liveMatches: any[] = [];
 
     // Selectors for ESPN Live Card
-    $('.ds-p-0 .ds-flex.ds-flex-col').each((_, el) => {
+    $('.ds-p-0 .ds-flex.ds-flex-col').each((_: any, el: any) => {
       const title = $(el).find('.ds-text-tight-s.ds-font-bold').first().text().trim();
       const status = $(el).find('.ds-text-tight-s.ds-font-regular.ds-text-ui-typo-mid').text().trim();
       const relativeUrl = $(el).closest('a').attr('href') || '';
@@ -59,7 +61,7 @@ async function discoverCricbuzzMatches() {
     const $ = cheerio.load(html);
     const matches: any[] = [];
 
-    $('.cb-mtch-lst.cb-col.cb-col-100.cb-tms-itm').each((_, el) => {
+    $('.cb-mtch-lst.cb-col.cb-col-100.cb-tms-itm').each((_: any, el: any) => {
       const title = $(el).find('.text-hvr-underline').text().trim();
       const status = $(el).find('.cb-text-live').text().trim() || $(el).find('.cb-text-complete').text().trim();
       const relativeUrl = $(el).find('a').attr('href') || '';
