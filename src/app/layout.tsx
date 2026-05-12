@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 
 import NotificationToast from "@/components/NotificationToast";
+import UserNav from "@/components/UserNav";
 
 export default function RootLayout({
   children,
@@ -100,9 +101,7 @@ export default function RootLayout({
             </div>
 
             <div className="flex items-center gap-4">
-              <a href="/dashboard" className="hidden sm:block px-4 py-2 rounded-full glass hover:bg-white/10 transition-colors text-sm font-medium">
-                Dashboard
-              </a>
+              <UserNav />
               <button className="md:hidden text-white">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
