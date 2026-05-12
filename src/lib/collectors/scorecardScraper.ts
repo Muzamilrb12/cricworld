@@ -23,13 +23,13 @@ export async function scrapeDetailedScorecard(matchUrl: string) {
     };
 
     // Scrape each innings table
-    $('.ds-p-0 > .ds-bg-fill-content-prime').each((i, inningsEl) => {
+    $('.ds-p-0 > .ds-bg-fill-content-prime').each((i: any, inningsEl: any) => {
       const teamName = $(inningsEl).find('.ds-text-title-xs.ds-font-bold').text().trim();
       const batters: any[] = [];
       const bowlers: any[] = [];
 
       // Batting Table
-      $(inningsEl).find('table.ds-table.ds-table-md.ds-table-auto.ci-scorecard-table tbody tr').each((_, row) => {
+      $(inningsEl).find('table.ds-table.ds-table-md.ds-table-auto.ci-scorecard-table tbody tr').each((_: any, row: any) => {
         const name = $(row).find('td.ds-flex.ds-items-center > a').text().trim();
         const runs = $(row).find('td.ds-font-bold.ds-text-right.ds-text-tight-m').text().trim();
         const balls = $(row).find('td:nth-child(4)').text().trim();
@@ -41,7 +41,7 @@ export async function scrapeDetailedScorecard(matchUrl: string) {
       });
 
       // Bowling Table
-      $(inningsEl).find('table.ds-table.ds-table-md.ds-table-auto:not(.ci-scorecard-table) tbody tr').each((_, row) => {
+      $(inningsEl).find('table.ds-table.ds-table-md.ds-table-auto:not(.ci-scorecard-table) tbody tr').each((_: any, row: any) => {
         const name = $(row).find('td.ds-flex.ds-items-center > a').text().trim();
         const overs = $(row).find('td:nth-child(2)').text().trim();
         const runs = $(row).find('td:nth-child(4)').text().trim();
