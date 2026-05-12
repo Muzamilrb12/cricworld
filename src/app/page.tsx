@@ -8,7 +8,7 @@ import pointsTableData from "../../data/points-table.json";
 export default function Home() {
   const matches = matchesData || [];
   const news = (newsData || []).slice(0, 3);
-  const iplTable = (pointsTableData as any)["ipl-2026"]?.slice(0, 5) || [];
+  const iplTable = (pointsTableData as any)["leagues"]?.["ipl-2026"]?.slice(0, 5) || [];
 
   return (
     <div className="container mx-auto px-4 py-8">
