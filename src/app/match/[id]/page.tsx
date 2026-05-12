@@ -3,6 +3,7 @@ import commentaryData from "../../../../data/commentary.json";
 import PredictionGame from "@/components/PredictionGame";
 import LiveChat from "@/components/LiveChat";
 import AdBanner from "@/components/AdBanner";
+import LiveCommentary from "@/components/LiveCommentary";
 import { notFound } from "next/navigation";
 
 interface PageProps {
@@ -155,31 +156,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
           </div>
 
           {/* Commentary Panel */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-black italic uppercase tracking-tighter">Live Commentary Panel</h2>
-            <div className="space-y-6">
-              {commentary.map((ball: any, idx: number) => (
-                <div key={idx} className="flex gap-6 group">
-                  <div className="w-12 h-12 glass rounded-full flex items-center justify-center shrink-0 font-black text-xs border border-white/5 group-hover:border-accent/50 transition-colors">
-                    {ball.over}
-                  </div>
-                  <div className="flex-1 pb-6 border-b border-white/5">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="font-black text-sm uppercase tracking-tighter italic">{ball.bowler} to {ball.batter}</span>
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                        ball.runs === 'W' ? 'bg-red-500/20 text-red-500' : 
-                        ball.runs === '6' || ball.runs === '4' ? 'bg-accent/20 text-accent' : 
-                        'bg-white/5 text-muted-foreground'
-                      }`}>
-                        {ball.runs === 'W' ? 'OUT' : ball.runs + ' RUNS'}
-                      </span>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{ball.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <LiveCommentary initialCommentary={commentary} isLive={match.status === "Live"} />
         </div>
 
         {/* Sidebar */}
