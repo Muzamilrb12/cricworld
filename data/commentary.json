@@ -1,41 +1,43 @@
 {
-  "live-pak-ban": [
+  "live-ban-pak": [
     {
-      "over": "34.5",
-      "bowler": "Shaheen Afridi",
-      "batter": "Shadman Islam",
+      "over": "Day 5",
+      "bowler": "Bangladesh",
+      "batter": "Pakistan",
       "runs": "0",
-      "description": "Solid defense. Shaheen bowls a yorker-length delivery, Shadman jams it out to mid-off."
+      "description": "INNINGS BREAK: Bangladesh have declared at 240/9 in their second innings. Pakistan need 268 runs to win. BAN 413 & 240/9d, PAK 386. Bangladesh lead by 267 runs."
     },
     {
-      "over": "34.4",
+      "over": "2nd Inn",
       "bowler": "Shaheen Afridi",
-      "batter": "Shadman Islam",
-      "runs": "4",
-      "description": "FOUR! Classy shot. Overpitched on the pads, Shadman flicks it through mid-wicket. The outfield is fast, and it races away."
-    },
-    {
-      "over": "34.3",
-      "bowler": "Shaheen Afridi",
-      "batter": "Najmul Hossain Shanto",
-      "runs": "W",
-      "description": "OUT! BOWLED! Absolute beauty from Shaheen! It swings in late, goes through the gate and rattles the stumps. Shanto is stunned."
-    },
-    {
-      "over": "34.2",
-      "bowler": "Shaheen Afridi",
-      "batter": "Najmul Hossain Shanto",
+      "batter": "Bangladesh",
       "runs": "0",
-      "description": "Good length outside off, left alone by the batter."
+      "description": "Bangladesh battled hard in the second innings, adding 240 runs to set Pakistan a challenging target. The pitch has been assisting the bowlers on Day 5 at the Shere Bangla National Stadium."
+    },
+    {
+      "over": "1st Inn",
+      "bowler": "Pakistan",
+      "batter": "Pakistan",
+      "runs": "386",
+      "description": "Pakistan scored 386 in reply to Bangladesh's first innings 413, trailing by 27 runs. A solid effort from the middle order kept Pakistan in the contest."
     }
   ],
-  "live-mi-csk": [
+  "result-pbks-dc": [
     {
-      "over": "18.2",
-      "bowler": "Jasprit Bumrah",
-      "batter": "MS Dhoni",
-      "runs": "6",
-      "description": "SIX! Classic Dhoni! Bumrah misses the yorker by an inch, and Dhoni lofts it over long-on. The crowd is going wild!"
+      "over": "Final",
+      "bowler": "DC Bowling",
+      "batter": "DC Batting",
+      "runs": "W",
+      "description": "DC WON! Miller, Axar and Ashutosh keep DC alive with a stunning chase against Punjab Kings in the 55th match of IPL 2026."
+    }
+  ],
+  "result-mi-rcb": [
+    {
+      "over": "Final",
+      "bowler": "RCB Bowling",
+      "batter": "RCB Batting",
+      "runs": "W",
+      "description": "RCB WON! Royal Challengers Bengaluru defeated Mumbai Indians in the 54th match of IPL 2026 at Wankhede Stadium."
     }
   ]
 }

@@ -3,10 +3,12 @@ import MatchCard from "@/components/MatchCard";
 import AdBanner from "@/components/AdBanner";
 import matchesData from "../../data/matches.json";
 import newsData from "../../data/news.json";
+import pointsTableData from "../../data/points-table.json";
 
 export default function Home() {
   const matches = matchesData || [];
   const news = (newsData || []).slice(0, 3);
+  const iplTable = (pointsTableData as any)["ipl-2026"]?.slice(0, 5) || [];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -47,7 +49,7 @@ export default function Home() {
       <section className="mb-12">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold">Live & Upcoming</h2>
-          <button className="text-accent text-sm font-bold hover:underline">View All Schedule</button>
+          <a href="/schedule" className="text-accent text-sm font-bold hover:underline">View All Schedule</a>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -88,7 +90,7 @@ export default function Home() {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-bold mb-6">Points Table</h2>
+            <h2 className="text-2xl font-bold mb-6">IPL 2026 Standings</h2>
             <div className="glass rounded-2xl overflow-hidden">
               <table className="w-full text-sm text-left">
                 <thead className="bg-white/5 text-muted-foreground text-xs uppercase font-bold">
@@ -100,35 +102,19 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-3 font-bold">Pakistan</td>
-                    <td className="px-4 py-3">5</td>
-                    <td className="px-4 py-3">4</td>
-                    <td className="px-4 py-3 text-accent font-bold">8</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-3 font-bold">India</td>
-                    <td className="px-4 py-3">5</td>
-                    <td className="px-4 py-3">4</td>
-                    <td className="px-4 py-3 text-accent font-bold">8</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-3 font-bold">Australia</td>
-                    <td className="px-4 py-3">5</td>
-                    <td className="px-4 py-3">3</td>
-                    <td className="px-4 py-3 text-accent font-bold">6</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-3 font-bold">England</td>
-                    <td className="px-4 py-3">5</td>
-                    <td className="px-4 py-3">2</td>
-                    <td className="px-4 py-3 text-accent font-bold">4</td>
-                  </tr>
+                  {iplTable.map((team: any) => (
+                    <tr key={team.rank} className="hover:bg-white/5 transition-colors">
+                      <td className="px-4 py-3 font-bold">{team.team}</td>
+                      <td className="px-4 py-3">{team.p}</td>
+                      <td className="px-4 py-3 text-green-400">{team.w}</td>
+                      <td className="px-4 py-3 text-accent font-bold">{team.pts}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
-            <a href="/rankings" className="block text-center mt-4 text-xs text-accent font-bold hover:underline uppercase tracking-widest">
-              View All Rankings →
+            <a href="/points-table" className="block text-center mt-4 text-xs text-accent font-bold hover:underline uppercase tracking-widest">
+              View Full Table →
             </a>
           </div>
         </div>

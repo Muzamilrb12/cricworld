@@ -62,16 +62,16 @@ export default function RootLayout({
               <a href="/videos" className="hover:text-accent transition-colors">Videos</a>
               <a href="/stats" className="hover:text-accent transition-colors">Stats</a>
               <a href="/rankings" className="hover:text-accent transition-colors">Rankings</a>
-
+              <a href="/about" className="hover:text-accent transition-colors">About</a>
 
 
 
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="hidden sm:block px-4 py-2 rounded-full glass hover:bg-white/10 transition-colors text-sm font-medium">
-                Sign In
-              </button>
+              <a href="/dashboard" className="hidden sm:block px-4 py-2 rounded-full glass hover:bg-white/10 transition-colors text-sm font-medium">
+                Dashboard
+              </a>
               <button className="md:hidden text-white">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
