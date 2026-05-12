@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { fetchLiveMatches } from '@/lib/cricket-api';
-import { discoverLiveMatches } from '@/lib/collectors/discovery';
+import { discoverLiveMatches } from '@/lib/collectors/matchDiscovery';
 
 export async function GET() {
   const result = await fetchLiveMatches();
