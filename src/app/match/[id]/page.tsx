@@ -90,69 +90,100 @@ export default async function MatchDetailPage({ params }: PageProps) {
                   <h3 className="text-xl font-black italic uppercase text-accent">{team.name} Scorecard</h3>
                   <div className="text-right">
                     <span className="text-2xl font-black">{team.score}</span>
-                    <span className="text-xs text-muted-foreground ml-2">({team.overs} Ov)</span>
+                    {team.overs && <span className="text-xs text-muted-foreground ml-2">({team.overs} Ov)</span>}
                   </div>
                 </div>
 
-                {/* Batting Card */}
-                <div className="glass rounded-2xl overflow-hidden border border-white/5">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-white/5 text-muted-foreground font-bold uppercase">
-                      <tr>
-                        <th className="px-4 py-3">Batter</th>
-                        <th className="px-4 py-3">Status</th>
-                        <th className="px-4 py-3 text-right">R</th>
-                        <th className="px-4 py-3 text-right">B</th>
-                        <th className="px-4 py-3 text-right">4s</th>
-                        <th className="px-4 py-3 text-right">6s</th>
-                        <th className="px-4 py-3 text-right">SR</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-white/5">
-                      {team.battingScorecard?.map((b: any, bIdx: number) => (
-                        <tr key={bIdx} className="hover:bg-white/5 transition-colors group">
-                          <td className="px-4 py-3 font-bold text-white group-hover:text-accent">{b.player}</td>
-                          <td className="px-4 py-3 text-muted-foreground italic">{b.status}</td>
-                          <td className="px-4 py-3 text-right font-black text-accent">{b.runs}</td>
-                          <td className="px-4 py-3 text-right">{b.balls}</td>
-                          <td className="px-4 py-3 text-right">{b.fours}</td>
-                          <td className="px-4 py-3 text-right">{b.sixes}</td>
-                          <td className="px-4 py-3 text-right text-muted-foreground">{b.sr}</td>
+                {/* Batting Card (Only if data exists) */}
+                {team.battingScorecard && team.battingScorecard.length > 0 && (
+                  <div className="glass rounded-2xl overflow-hidden border border-white/5">
+                    <table className="w-full text-left text-xs">
+                      <thead className="bg-white/5 text-muted-foreground font-bold uppercase">
+                        <tr>
+                          <th className="px-4 py-3">Batter</th>
+                          <th className="px-4 py-3">Status</th>
+                          <th className="px-4 py-3 text-right">R</th>
+                          <th className="px-4 py-3 text-right">B</th>
+                          <th className="px-4 py-3 text-right">4s</th>
+                          <th className="px-4 py-3 text-right">6s</th>
+                          <th className="px-4 py-3 text-right">SR</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                      </thead>
+                      <tbody className="divide-y divide-white/5">
+                        {team.battingScorecard?.map((b: any, bIdx: number) => (
+                          <tr key={bIdx} className="hover:bg-white/5 transition-colors group">
+                            <td className="px-4 py-3 font-bold text-white group-hover:text-accent">{b.player}</td>
+                            <td className="px-4 py-3 text-muted-foreground italic">{b.status}</td>
+                            <td className="px-4 py-3 text-right font-black text-accent">{b.runs}</td>
+                            <td className="px-4 py-3 text-right">{b.balls}</td>
+                            <td className="px-4 py-3 text-right">{b.fours}</td>
+                            <td className="px-4 py-3 text-right">{b.sixes}</td>
+                            <td className="px-4 py-3 text-right text-muted-foreground">{b.sr}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
 
-                {/* Bowling Card */}
-                <div className="glass rounded-2xl overflow-hidden border border-white/5">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-white/5 text-muted-foreground font-bold uppercase">
-                      <tr>
-                        <th className="px-4 py-3">Bowler</th>
-                        <th className="px-4 py-3 text-right">O</th>
-                        <th className="px-4 py-3 text-right">M</th>
-                        <th className="px-4 py-3 text-right">R</th>
-                        <th className="px-4 py-3 text-right">W</th>
-                        <th className="px-4 py-3 text-right">Eco</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-white/5">
-                      {team.bowlingScorecard?.map((bo: any, boIdx: number) => (
-                        <tr key={boIdx} className="hover:bg-white/5 transition-colors group">
-                          <td className="px-4 py-3 font-bold text-white group-hover:text-accent">{bo.bowler}</td>
-                          <td className="px-4 py-3 text-right">{bo.overs}</td>
-                          <td className="px-4 py-3 text-right">{bo.maidens}</td>
-                          <td className="px-4 py-3 text-right">{bo.runs}</td>
-                          <td className="px-4 py-3 text-right font-black text-red-500">{bo.wickets}</td>
-                          <td className="px-4 py-3 text-right text-muted-foreground">{bo.eco}</td>
+                {/* Bowling Card (Only if data exists) */}
+                {team.bowlingScorecard && team.bowlingScorecard.length > 0 && (
+                  <div className="glass rounded-2xl overflow-hidden border border-white/5">
+                    <table className="w-full text-left text-xs">
+                      <thead className="bg-white/5 text-muted-foreground font-bold uppercase">
+                        <tr>
+                          <th className="px-4 py-3">Bowler</th>
+                          <th className="px-4 py-3 text-right">O</th>
+                          <th className="px-4 py-3 text-right">M</th>
+                          <th className="px-4 py-3 text-right">R</th>
+                          <th className="px-4 py-3 text-right">W</th>
+                          <th className="px-4 py-3 text-right">Eco</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                      </thead>
+                      <tbody className="divide-y divide-white/5">
+                        {team.bowlingScorecard?.map((bo: any, boIdx: number) => (
+                          <tr key={boIdx} className="hover:bg-white/5 transition-colors group">
+                            <td className="px-4 py-3 font-bold text-white group-hover:text-accent">{bo.bowler}</td>
+                            <td className="px-4 py-3 text-right">{bo.overs}</td>
+                            <td className="px-4 py-3 text-right">{bo.maidens}</td>
+                            <td className="px-4 py-3 text-right">{bo.runs}</td>
+                            <td className="px-4 py-3 text-right font-black text-red-500">{bo.wickets}</td>
+                            <td className="px-4 py-3 text-right text-muted-foreground">{bo.eco}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </div>
             ))}
+          </div>
+
+          {/* Playing XI Section */}
+          <div className="space-y-8">
+            <h2 className="text-3xl font-black italic uppercase tracking-tighter">Playing XI Lineups</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {match.teams.map((team: any, tIdx: number) => (
+                <div key={tIdx} className="glass p-8 rounded-[2.5rem] border border-white/5 bg-gradient-to-br from-accent/5 to-transparent">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 bg-accent/20 rounded-2xl flex items-center justify-center font-black text-accent italic">{team.shortName}</div>
+                    <h3 className="text-xl font-black italic uppercase">{team.name} XI</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {team.playing11?.map((player: string, pIdx: number) => (
+                      <div key={pIdx} className="flex items-center gap-4 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-accent/30 transition-all cursor-default group">
+                        <span className="text-[10px] font-black italic text-muted-foreground/30 group-hover:text-accent transition-colors">{String(pIdx + 1).padStart(2, '0')}</span>
+                        <span className="text-sm font-bold group-hover:text-white transition-colors">{player}</span>
+                        {player.includes("(c)") && <span className="ml-auto text-[8px] bg-accent text-background font-black px-1.5 py-0.5 rounded uppercase">Captain</span>}
+                        {player.includes("(wk)") && <span className="ml-auto text-[8px] bg-blue-500 text-white font-black px-1.5 py-0.5 rounded uppercase">Keeper</span>}
+                      </div>
+                    )) || (
+                      <p className="text-xs text-muted-foreground italic">Lineups not announced yet.</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Commentary Panel */}

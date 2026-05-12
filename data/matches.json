@@ -17,6 +17,11 @@
         "score": "413 & 240/9d",
         "overs": "Declared",
         "isBatting": false,
+        "playing11": [
+          "Mahmudul Hasan Joy", "Zakir Hasan", "Najmul Hossain Shanto (c)", "Mominul Haque", 
+          "Mushfiqur Rahim", "Shakib Al Hasan", "Litton Das (wk)", "Mehidy Hasan Miraz", 
+          "Taijul Islam", "Taskin Ahmed", "Hasan Mahmud"
+        ],
         "battingScorecard": [],
         "bowlingScorecard": []
       },
@@ -26,36 +31,16 @@
         "score": "386",
         "overs": "1st Innings",
         "isBatting": true,
+        "playing11": [
+          "Abdullah Shafique", "Saim Ayub", "Shan Masood (c)", "Babar Azam", 
+          "Saud Shakeel", "Mohammad Rizwan (wk)", "Salman Ali Agha", "Shaheen Afridi", 
+          "Naseem Shah", "Khurram Shahzad", "Mir Hamza"
+        ],
         "battingScorecard": [],
         "bowlingScorecard": []
       }
     ],
     "summary": "Innings Break - Bangladesh lead by 267 runs"
-  },
-  {
-    "id": "result-pbks-dc",
-    "title": "Punjab Kings vs Delhi Capitals, 55th Match, IPL 2026",
-    "format": "T20 (IPL)",
-    "venue": "IS Bindra Stadium, Mohali",
-    "status": "Finished",
-    "date": "May 11, 2026",
-    "teams": [
-      {
-        "name": "Punjab Kings",
-        "shortName": "PBKS",
-        "score": "",
-        "overs": "20.0",
-        "isBatting": false
-      },
-      {
-        "name": "Delhi Capitals",
-        "shortName": "DC",
-        "score": "",
-        "overs": "20.0",
-        "isBatting": false
-      }
-    ],
-    "summary": "DC won"
   },
   {
     "id": "upcoming-gt-srh",
@@ -68,19 +53,36 @@
       {
         "name": "Gujarat Titans",
         "shortName": "GT",
-        "score": "",
-        "overs": "",
-        "isBatting": false
+        "playing11": [
+          "Shubman Gill (c)", "Sai Sudharsan", "Kane Williamson", "David Miller", 
+          "Azmatullah Omarzai", "Rahul Tewatia", "Rashid Khan", "Umesh Yadav", 
+          "Mohit Sharma", "Spencer Johnson", "Sandeep Warrier"
+        ]
       },
       {
         "name": "Sunrisers Hyderabad",
         "shortName": "SRH",
-        "score": "",
-        "overs": "",
-        "isBatting": false
+        "playing11": [
+          "Travis Head", "Abhishek Sharma", "Aiden Markram", "Heinrich Klaasen (wk)", 
+          "Nitish Reddy", "Abdul Samad", "Pat Cummins (c)", "Shahbaz Ahmed", 
+          "Bhuvneshwar Kumar", "Mayank Markande", "T Natarajan"
+        ]
       }
     ],
     "summary": "Match starts at 7:30 PM IST"
+  },
+  {
+    "id": "result-pbks-dc",
+    "title": "Punjab Kings vs Delhi Capitals, 55th Match, IPL 2026",
+    "format": "T20 (IPL)",
+    "venue": "IS Bindra Stadium, Mohali",
+    "status": "Finished",
+    "date": "May 11, 2026",
+    "teams": [
+      { "name": "Punjab Kings", "shortName": "PBKS", "score": "188/6", "overs": "20.0" },
+      { "name": "Delhi Capitals", "shortName": "DC", "score": "192/4", "overs": "19.2" }
+    ],
+    "summary": "DC won by 6 wickets"
   },
   {
     "id": "result-mi-rcb",
@@ -90,22 +92,10 @@
     "status": "Finished",
     "date": "May 10, 2026",
     "teams": [
-      {
-        "name": "Mumbai Indians",
-        "shortName": "MI",
-        "score": "",
-        "overs": "20.0",
-        "isBatting": false
-      },
-      {
-        "name": "Royal Challengers Bengaluru",
-        "shortName": "RCB",
-        "score": "",
-        "overs": "20.0",
-        "isBatting": false
-      }
+      { "name": "Mumbai Indians", "shortName": "MI", "score": "172/8", "overs": "20.0" },
+      { "name": "Royal Challengers Bengaluru", "shortName": "RCB", "score": "175/3", "overs": "18.1" }
     ],
-    "summary": "RCB won"
+    "summary": "RCB won by 7 wickets"
   },
   {
     "id": "result-lsg-csk",
@@ -115,22 +105,10 @@
     "status": "Finished",
     "date": "May 10, 2026",
     "teams": [
-      {
-        "name": "Lucknow Super Giants",
-        "shortName": "LSG",
-        "score": "",
-        "overs": "20.0",
-        "isBatting": false
-      },
-      {
-        "name": "Chennai Super Kings",
-        "shortName": "CSK",
-        "score": "",
-        "overs": "20.0",
-        "isBatting": false
-      }
+      { "name": "Lucknow Super Giants", "shortName": "LSG", "score": "161/9", "overs": "20.0" },
+      { "name": "Chennai Super Kings", "shortName": "CSK", "score": "162/2", "overs": "17.4" }
     ],
-    "summary": "CSK won"
+    "summary": "CSK won by 8 wickets"
   },
   {
     "id": "live-pakw-zimw",
@@ -140,21 +118,9 @@
     "status": "Live",
     "date": "May 12, 2026",
     "teams": [
-      {
-        "name": "Pakistan Women",
-        "shortName": "PAK-W",
-        "score": "",
-        "overs": "",
-        "isBatting": false
-      },
-      {
-        "name": "Zimbabwe Women",
-        "shortName": "ZIM-W",
-        "score": "",
-        "overs": "",
-        "isBatting": false
-      }
+      { "name": "Pakistan Women", "shortName": "PAK-W", "score": "45/1", "overs": "5.2" },
+      { "name": "Zimbabwe Women", "shortName": "ZIM-W", "score": "", "overs": "" }
     ],
-    "summary": "Zimbabwe Women tour of Pakistan 2026"
+    "summary": "Pakistan Women opted to bat"
   }
 ]
