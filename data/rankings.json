@@ -11,8 +11,8 @@
     "odi": [
       { "rank": 1, "team": "India", "rating": 121, "points": 4820 },
       { "rank": 2, "team": "Australia", "rating": 118, "points": 4150 },
-      { "rank": 3, "team": "South Africa", "rating": 110, "points": 3180 },
-      { "rank": 4, "team": "Pakistan", "rating": 108, "points": 2850 },
+      { "rank": 3, "team": "Pakistan", "rating": 108, "points": 2850 },
+      { "rank": 4, "team": "South Africa", "rating": 110, "points": 3180 },
       { "rank": 5, "team": "New Zealand", "rating": 101, "points": 2450 }
     ],
     "t20i": [
@@ -28,9 +28,9 @@
       "batting": [
         { "rank": 1, "name": "Joe Root", "team": "ENG", "rating": 899 },
         { "rank": 2, "name": "Kane Williamson", "team": "NZ", "rating": 876 },
-        { "rank": 3, "name": "Babar Azam", "team": "PAK", "rating": 845 },
-        { "rank": 4, "name": "Steve Smith", "team": "AUS", "rating": 812 },
-        { "rank": 5, "name": "Virat Kohli", "team": "IND", "rating": 795 }
+        { "rank": 3, "name": "Yashasvi Jaiswal", "team": "IND", "rating": 855 },
+        { "rank": 4, "name": "Babar Azam", "team": "PAK", "rating": 845 },
+        { "rank": 5, "name": "Steve Smith", "team": "AUS", "rating": 812 }
       ],
       "bowling": [
         { "rank": 1, "name": "Jasprit Bumrah", "team": "IND", "rating": 875 },
@@ -56,9 +56,9 @@
       "batting": [
         { "rank": 1, "name": "Suryakumar Yadav", "team": "IND", "rating": 861 },
         { "rank": 2, "name": "Phil Salt", "team": "ENG", "rating": 802 },
-        { "rank": 3, "name": "Babar Azam", "team": "PAK", "rating": 765 },
-        { "rank": 4, "name": "Mohammad Rizwan", "team": "PAK", "rating": 748 },
-        { "rank": 5, "name": "Travis Head", "team": "AUS", "rating": 732 }
+        { "rank": 3, "name": "Travis Head", "team": "AUS", "rating": 795 },
+        { "rank": 4, "name": "Babar Azam", "team": "PAK", "rating": 765 },
+        { "rank": 5, "name": "Mohammad Rizwan", "team": "PAK", "rating": 748 }
       ],
       "bowling": [
         { "rank": 1, "name": "Adil Rashid", "team": "ENG", "rating": 726 },

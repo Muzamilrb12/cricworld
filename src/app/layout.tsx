@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 import NotificationToast from "@/components/NotificationToast";
 import UserNav from "@/components/UserNav";
+import LiveScoreTicker from "@/components/LiveScoreTicker";
 
 export default function RootLayout({
   children,
@@ -49,6 +50,9 @@ export default function RootLayout({
             </div>
             
             <div className="hidden lg:flex items-center gap-6 text-sm font-black italic uppercase tracking-tighter">
+              {/* Home Link */}
+              <a href="/" className="hover:text-accent transition-colors">Home</a>
+
               {/* Matches Group */}
               <div className="relative group/nav py-4">
                 <button className="flex items-center gap-1.5 hover:text-accent transition-colors">
@@ -95,7 +99,6 @@ export default function RootLayout({
                 <div className="absolute top-full right-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
                   <a href="/about" className="p-3 rounded-xl hover:bg-white/5 block transition-all">About Us</a>
                   <a href="/admin/live-editor" className="p-3 rounded-xl hover:bg-accent/10 text-accent font-bold block transition-all">Live Editor</a>
-                  <a href="/dashboard" className="p-3 rounded-xl hover:bg-white/5 block transition-all">My Dashboard</a>
                 </div>
               </div>
             </div>
@@ -111,6 +114,8 @@ export default function RootLayout({
           </nav>
         </header>
         
+        <LiveScoreTicker />
+
         <main className="flex-1">
           {children}
         </main>
