@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+// import { chromium } from 'playwright';
 import { supabase } from '../supabase';
 
 /**
@@ -6,6 +6,7 @@ import { supabase } from '../supabase';
  * Fetches data from ESPN Cricinfo and syncs to Supabase.
  */
 export async function collectUpcomingMatches() {
+  const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   

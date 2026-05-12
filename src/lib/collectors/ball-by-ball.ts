@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+// import { chromium } from 'playwright';
 import { supabase } from '../supabase';
 
 /**
@@ -6,6 +6,7 @@ import { supabase } from '../supabase';
  * Fetches real-time ball events and syncs to Supabase.
  */
 export async function collectCommentary(matchId: string, externalMatchUrl: string) {
+  const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 

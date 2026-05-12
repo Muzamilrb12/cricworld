@@ -1,10 +1,11 @@
-import { chromium } from 'playwright';
+// import { chromium } from 'playwright'; // Switched to dynamic import for build compatibility
 
 /**
  * Match Discovery Scraper
  * If the official API misses a match, we scrape ESPN Live page to find it.
  */
 export async function discoverLiveMatches() {
+  const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   

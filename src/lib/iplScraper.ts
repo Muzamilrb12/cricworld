@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+// import { chromium } from 'playwright';
 
 /**
  * Scrapes the live IPL points table from ESPN Cricinfo.
@@ -6,6 +6,7 @@ import { chromium } from 'playwright';
  *   - teamId, teamName, shortName, logoUrl, matchesPlayed, points, netRunRate
  */
 export async function fetchIplPointsTable() {
+  const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   try {
