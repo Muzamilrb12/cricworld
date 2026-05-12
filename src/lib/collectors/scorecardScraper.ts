@@ -5,9 +5,15 @@ import * as cheerio from 'cheerio';
  * Fetches detailed batting, bowling, and innings data from ESPN Cricinfo.
  */
 export async function scrapeDetailedScorecard(matchUrl: string) {
+  const headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    'Referer': 'https://www.espncricinfo.com/'
+  };
+
   try {
     console.log(`[Scorecard] Scraping detailed card from ${matchUrl}...`);
-    const res = await fetch(matchUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    const res = await fetch(matchUrl, { headers });
     const html = await res.text();
     const $ = cheerio.load(html);
 
