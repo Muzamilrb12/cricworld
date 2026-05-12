@@ -1,4 +1,3 @@
-// import { chromium } from 'playwright';
 
 /**
  * Scrapes the live IPL points table from ESPN Cricinfo.
