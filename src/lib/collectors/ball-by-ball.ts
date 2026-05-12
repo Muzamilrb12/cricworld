@@ -1,56 +1,47 @@
+import * as cheerio from 'cheerio';
 import { supabase } from '../supabase';
 
 /**
- * Ball-by-Ball Commentary Collector
- * Fetches real-time ball events and syncs to Supabase.
+ * Ball-by-Ball Commentary Collector (Cheerio Version)
  */
 export async function collectCommentary(matchId: string, externalMatchUrl: string) {
-  const { chromium } = await import('playwright');
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
-
   try {
-    console.log(`[Commentary] Fetching live events for match ${matchId}...`);
-    await page.goto(`${externalMatchUrl}/live-cricket-score`, { waitUntil: 'networkidle' });
+    console.log(`[Commentary] Fetching live events for match ${matchId} via Cheerio...`);
+    const url = `${externalMatchUrl}/live-cricket-score`;
+    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    const html = await res.text();
+    const $ = cheerio.load(html);
 
-    // Scrape latest over/balls (Example for ESPN structure)
-    const events = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2', (elements: any[]) => {
-      return elements.map((el: any) => {
-        const overBall = el.querySelector('.ds-text-tight-s.ds-font-bold')?.textContent?.trim() || '';
-        const outcome = el.querySelector('.ds-flex.ds-items-center.ds-justify-center.ds-rounded-full')?.textContent?.trim() || '';
-        const commentaryText = el.querySelector('.ds-text-tight-s.ds-font-regular')?.textContent?.trim() || '';
-        
-        return {
+    const events: any[] = [];
+
+    $('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2').each((_, el) => {
+      const overBall = $(el).find('.ds-text-tight-s.ds-font-bold').text().trim();
+      const outcome = $(el).find('.ds-flex.ds-items-center.ds-justify-center.ds-rounded-full').text().trim();
+      const commentaryText = $(el).find('.ds-text-tight-s.ds-font-regular').text().trim();
+      
+      if (overBall) {
+        events.push({
           over_no: parseFloat(overBall),
           ball_no: Math.round((parseFloat(overBall) % 1) * 10),
           event: outcome,
           text: commentaryText,
           is_wicket: outcome.toLowerCase().includes('w')
-        };
-      });
+        });
+      }
     });
-
-    console.log(`[Commentary] Found ${events.length} events. Syncing...`);
 
     for (const event of events) {
       if (isNaN(event.over_no)) continue;
-
-      const { error } = await supabase
-        .from('commentary')
-        .upsert({
-          match_id: matchId,
-          ...event,
-          source: 'ESPN'
-        }, { onConflict: 'match_id, over_no' } as any);
-
-      if (error) console.error(`[DB Error] Commentary sync failed: ${error.message}`);
+      await supabase.from('commentary').upsert({
+        match_id: matchId,
+        ...event,
+        source: 'ESPN'
+      }, { onConflict: 'match_id, over_no' } as any);
     }
 
-    await browser.close();
     return { success: true, count: events.length };
   } catch (err: any) {
     console.error(`[Commentary Error] ${err.message}`);
-    await browser.close();
     return { success: false, error: err.message };
   }
 }
