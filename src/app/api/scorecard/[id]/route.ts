@@ -11,13 +11,31 @@ interface RouteParams {
  * Rule 1: Never returns fake data.
  * Rule 2: Source attribution included.
  */
-export async function GET(_req: Request, { params }: RouteParams) {
+import { scrapeDetailedScorecard } from '@/lib/collectors/scorecardScraper';
+
+export async function GET(req: Request, { params }: RouteParams) {
   const { id } = await params;
+  const { searchParams } = new URL(req.url);
+  const espnUrl = searchParams.get('url');
+
+  // If it's an ESPN scraped match and we have the URL, scrape the scorecard
+  if (id.startsWith('espn-') && espnUrl) {
+    const scrapedData = await scrapeDetailedScorecard(espnUrl);
+    if (scrapedData) {
+      return NextResponse.json({
+        status: 'ok',
+        data: scrapedData,
+        source: { name: 'ESPN (Scraped)', url: espnUrl },
+        fetched_at: new Date().toISOString()
+      });
+    }
+  }
+
   const result = await fetchMatchScorecard(id);
 
   return NextResponse.json(result, {
     headers: {
-      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+      'Cache-Control': 'no-store', // Disable cache for live debugging
     },
   });
 }

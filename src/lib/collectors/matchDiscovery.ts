@@ -15,7 +15,9 @@ export async function discoverLiveMatches() {
     const liveMatches: any[] = [];
 
     $('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2').each((_, el) => {
-      const title = $(el).find('.ds-text-tight-s.ds-font-bold').text().trim();
+      const titleEl = $(el).find('.ds-text-tight-s.ds-font-bold');
+      const title = titleEl.text().trim();
+      const relativeUrl = $(el).closest('a').attr('href') || '';
       const status = $(el).find('.ds-text-tight-s.ds-font-regular.ds-text-ui-typo-mid').text().trim();
       
       if (status.toLowerCase().includes('live') || status.toLowerCase().includes('day')) {
@@ -26,7 +28,7 @@ export async function discoverLiveMatches() {
           matchStarted: true,
           matchEnded: false,
           source: 'ESPN (Scraped)',
-          sourceUrl: 'https://www.espncricinfo.com/live-cricket-score'
+          sourceUrl: relativeUrl ? `https://www.espncricinfo.com${relativeUrl}` : 'https://www.espncricinfo.com/live-cricket-score'
         });
       }
     });

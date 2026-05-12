@@ -18,6 +18,12 @@ export default function LivePage() {
       if (json.status === 'ok' && json.data) {
         setMatches(json.data);
         setError(null);
+        
+        // Store discovered matches metadata for detail page lookup
+        const discovered = json.data.filter((m: any) => m.id.startsWith('espn-'));
+        if (discovered.length > 0) {
+          localStorage.setItem('discovered_matches', JSON.stringify(discovered));
+        }
       } else {
         setError(json.error || 'Data unavailable');
         setMatches([]);

@@ -16,15 +16,23 @@ export default function MatchDetailPage() {
 
   const fetchScorecard = useCallback(async () => {
     try {
-      const res = await fetch(`/api/scorecard/${id}`, { cache: 'no-store' });
+      // If we're coming from the live list, we might have the sourceUrl in state or need to find it
+      // For now, we check if there's a stored sourceUrl for this match
+      const storedMatches = JSON.parse(localStorage.getItem('discovered_matches') || '[]');
+      const matchMeta = storedMatches.find((m: any) => m.id === id);
+      const urlParam = matchMeta?.sourceUrl ? `?url=${encodeURIComponent(matchMeta.sourceUrl)}` : '';
+
+      const res = await fetch(`/api/scorecard/${id}${urlParam}`, { cache: 'no-store' });
       const json = await res.json();
 
       if (json.status === 'ok' && json.data) {
         setMatch(json.data);
         setError(null);
-        // Default to latest innings
-        if (json.data.scorecard && json.data.scorecard.length > 0) {
-          setActiveInnings(json.data.scorecard.length - 1);
+        
+        // Handle both API format (scorecard) and Scraped format (innings)
+        const inningsCount = json.data.scorecard?.length || json.data.innings?.length || 0;
+        if (inningsCount > 0) {
+          setActiveInnings(inningsCount - 1);
         }
       } else {
         setError(json.error || 'Scorecard data unavailable');
@@ -40,7 +48,6 @@ export default function MatchDetailPage() {
 
   useEffect(() => {
     fetchScorecard();
-    // Auto-refresh every 60s for live matches
     const interval = setInterval(fetchScorecard, 60000);
     return () => clearInterval(interval);
   }, [fetchScorecard]);
@@ -69,7 +76,9 @@ export default function MatchDetailPage() {
     );
   }
 
-  const currentScorecard = match.scorecard?.[activeInnings];
+  // Unified scorecard accessor
+  const scorecardData = match.scorecard || match.innings || [];
+  const currentScorecard = scorecardData[activeInnings];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -79,25 +88,23 @@ export default function MatchDetailPage() {
 
         {/* Team Info */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
-          {match.teamInfo?.map((team: any, idx: number) => (
+          {(match.teamInfo || [{name: match.innings?.[0]?.team || 'Team A'}, {name: match.innings?.[1]?.team || 'Team B'}])?.map((team: any, idx: number) => (
             <div key={idx} className={`flex flex-col items-center ${idx === 1 ? 'md:items-end' : 'md:items-start'} gap-4`}>
               {team.img && (
                 <img src={team.img} alt={team.name} className="w-16 h-16 rounded-2xl object-contain bg-white/5 p-2" />
               )}
               <div className={`text-center ${idx === 1 ? 'md:text-right' : 'md:text-left'}`}>
                 <h2 className="text-3xl font-black italic uppercase tracking-tighter">{team.name}</h2>
-                <p className="text-xs text-muted-foreground font-bold uppercase">{team.shortname}</p>
+                {team.shortname && <p className="text-xs text-muted-foreground font-bold uppercase">{team.shortname}</p>}
               </div>
             </div>
           ))}
 
           {/* Center VS */}
-          {match.teamInfo?.length >= 2 && (
-            <div className="flex flex-col items-center gap-4 order-first md:order-none">
-              <span className="text-6xl font-black italic text-accent tracking-tighter">VS</span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">{match.matchType}</span>
-            </div>
-          )}
+          <div className="flex flex-col items-center gap-4 order-first md:order-none">
+            <span className="text-6xl font-black italic text-accent tracking-tighter">VS</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">{match.matchType || 'LIVE MATCH'}</span>
+          </div>
         </div>
 
         {/* Scores Summary */}
@@ -116,7 +123,7 @@ export default function MatchDetailPage() {
 
         {/* Status */}
         <div className="mt-8 text-center">
-          <p className="text-lg font-black italic uppercase text-white/80 tracking-tight">{match.status}</p>
+          <p className="text-lg font-black italic uppercase text-white/80 tracking-tight">{match.status || 'Match in Progress'}</p>
         </div>
 
         {/* Source & Last Updated */}
@@ -131,14 +138,14 @@ export default function MatchDetailPage() {
       </div>
 
       {/* Scorecard Section */}
-      {match.scorecard && match.scorecard.length > 0 && (
+      {scorecardData.length > 0 && (
         <div className="space-y-8 mb-16">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <h2 className="text-4xl font-black italic uppercase tracking-tighter">Full Scorecard</h2>
             
             {/* Innings Switcher */}
             <div className="flex gap-2 p-1 glass rounded-2xl w-fit">
-              {match.scorecard.map((_: any, idx: number) => (
+              {scorecardData.map((s: any, idx: number) => (
                 <button
                   key={idx}
                   onClick={() => setActiveInnings(idx)}
@@ -146,7 +153,7 @@ export default function MatchDetailPage() {
                     activeInnings === idx ? 'bg-accent text-background' : 'hover:bg-white/5 text-muted-foreground'
                   }`}
                 >
-                  Innings {idx + 1}
+                  {s.team || `Innings ${idx + 1}`}
                 </button>
               ))}
             </div>
@@ -158,17 +165,12 @@ export default function MatchDetailPage() {
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <h3 className="text-xl font-black italic uppercase text-accent flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
-                  {currentScorecard.batting?.inning || `Innings ${activeInnings + 1}`}
+                  {currentScorecard.team || currentScorecard.batting?.inning || `Innings ${activeInnings + 1}`}
                 </h3>
-                {currentScorecard.batting?.totals && (
-                  <span className="text-xl font-black italic">
-                    {currentScorecard.batting.totals.r}/{currentScorecard.batting.totals.w} ({currentScorecard.batting.totals.o} Ov)
-                  </span>
-                )}
               </div>
 
               {/* Batting Table */}
-              {currentScorecard.batting?.batsman && currentScorecard.batting.batsman.length > 0 && (
+              {(currentScorecard.batting || currentScorecard.batting?.batsman) && (
                 <div className="glass rounded-3xl overflow-hidden border border-white/5">
                   <div className="px-6 py-3 bg-white/5 border-b border-white/5">
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-accent">Batting</h4>
@@ -180,39 +182,30 @@ export default function MatchDetailPage() {
                         <th className="px-6 py-4">Dismissal</th>
                         <th className="px-6 py-4 text-right">R</th>
                         <th className="px-6 py-4 text-right">B</th>
-                        <th className="px-6 py-4 text-right">4s</th>
-                        <th className="px-6 py-4 text-right">6s</th>
-                        <th className="px-6 py-4 text-right">SR</th>
+                        <th className="px-6 py-4 text-right hidden md:table-cell">4s</th>
+                        <th className="px-6 py-4 text-right hidden md:table-cell">6s</th>
+                        <th className="px-6 py-4 text-right hidden md:table-cell">SR</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5">
-                      {currentScorecard.batting.batsman.map((b: any, bIdx: number) => (
+                      {(currentScorecard.batting?.batsman || currentScorecard.batting)?.map((b: any, bIdx: number) => (
                         <tr key={bIdx} className="hover:bg-white/5 transition-colors group">
                           <td className="px-6 py-4 font-black text-sm italic group-hover:text-accent transition-colors">{b.name}</td>
-                          <td className="px-6 py-4 text-xs text-muted-foreground font-medium">{b.dismissal || 'not out'}</td>
-                          <td className="px-6 py-4 text-right font-black text-accent">{b.r}</td>
-                          <td className="px-6 py-4 text-right text-xs font-bold">{b.b}</td>
-                          <td className="px-6 py-4 text-right text-xs">{b['4s']}</td>
-                          <td className="px-6 py-4 text-right text-xs">{b['6s']}</td>
-                          <td className="px-6 py-4 text-right text-xs text-muted-foreground">{b.sr}</td>
+                          <td className="px-6 py-4 text-xs text-muted-foreground font-medium">{b.dismissal || b.status || 'not out'}</td>
+                          <td className="px-6 py-4 text-right font-black text-accent">{b.r || b.runs}</td>
+                          <td className="px-6 py-4 text-right text-xs font-bold">{b.b || b.balls}</td>
+                          <td className="px-6 py-4 text-right text-xs hidden md:table-cell">{b['4s'] || '-'}</td>
+                          <td className="px-6 py-4 text-right text-xs hidden md:table-cell">{b['6s'] || '-'}</td>
+                          <td className="px-6 py-4 text-right text-xs text-muted-foreground hidden md:table-cell">{b.sr || '-'}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
-                  {/* Extras & Total */}
-                  {currentScorecard.batting.extras && (
-                    <div className="px-6 py-3 bg-white/5 border-t border-white/5 flex justify-between text-xs">
-                      <span className="text-muted-foreground font-bold">Extras: {currentScorecard.batting.extras.r}</span>
-                      <span className="font-black italic text-accent">
-                        Total: {currentScorecard.batting.totals?.r}/{currentScorecard.batting.totals?.w} ({currentScorecard.batting.totals?.o} Ov)
-                      </span>
-                    </div>
-                  )}
                 </div>
               )}
 
               {/* Bowling Table */}
-              {currentScorecard.bowling?.bowler && currentScorecard.bowling.bowler.length > 0 && (
+              {(currentScorecard.bowling || currentScorecard.bowling?.bowler) && (
                 <div className="glass rounded-3xl overflow-hidden border border-white/5">
                   <div className="px-6 py-3 bg-white/5 border-b border-white/5">
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-accent">Bowling</h4>
@@ -224,19 +217,19 @@ export default function MatchDetailPage() {
                         <th className="px-6 py-4 text-right">O</th>
                         <th className="px-6 py-4 text-right">M</th>
                         <th className="px-6 py-4 text-right">R</th>
-                        <th className="px-6 py-4 text-right">W</th>
-                        <th className="px-6 py-4 text-right">Eco</th>
+                        <th className="px-6 py-4 text-right font-black text-accent">W</th>
+                        <th className="px-6 py-4 text-right hidden md:table-cell">Eco</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5">
-                      {currentScorecard.bowling.bowler.map((bo: any, boIdx: number) => (
+                      {(currentScorecard.bowling?.bowler || currentScorecard.bowling)?.map((bo: any, boIdx: number) => (
                         <tr key={boIdx} className="hover:bg-white/5 transition-colors group">
                           <td className="px-6 py-4 font-black text-sm italic group-hover:text-accent transition-colors">{bo.name}</td>
-                          <td className="px-6 py-4 text-right text-xs font-bold">{bo.o}</td>
-                          <td className="px-6 py-4 text-right text-xs">{bo.m}</td>
-                          <td className="px-6 py-4 text-right text-xs">{bo.r}</td>
-                          <td className="px-6 py-4 text-right font-black text-lg italic text-red-500">{bo.w}</td>
-                          <td className="px-6 py-4 text-right text-xs text-muted-foreground">{bo.eco}</td>
+                          <td className="px-6 py-4 text-right text-xs font-bold">{bo.o || bo.overs}</td>
+                          <td className="px-6 py-4 text-right text-xs">{bo.m || '-'}</td>
+                          <td className="px-6 py-4 text-right text-xs">{bo.r || bo.runs}</td>
+                          <td className="px-6 py-4 text-right font-black text-lg italic text-accent">{bo.w || bo.wickets}</td>
+                          <td className="px-6 py-4 text-right text-xs text-muted-foreground hidden md:table-cell">{bo.eco || '-'}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -255,14 +248,12 @@ export default function MatchDetailPage() {
         </div>
         
         <div className="space-y-8">
-          {/* Match Info Sidebar (already exists, but moving it here for layout) */}
           <div className="glass p-8 rounded-[3rem] border border-white/5 sticky top-24">
             <h3 className="text-xl font-black italic uppercase tracking-tighter text-accent mb-6">Match Context</h3>
             <div className="space-y-6">
               {[
-                { label: 'Venue', val: match.venue },
-                { label: 'Umpires', val: 'Richard Kettleborough, Nitin Menon' },
-                { label: 'Referee', val: 'Javagal Srinath' },
+                { label: 'Venue', val: match.venue || 'International Cricket Stadium' },
+                { label: 'Source', val: source?.name || 'Live Data' },
               ].map((info, idx) => (
                 <div key={idx} className="border-b border-white/5 pb-4 last:border-0">
                   <p className="text-[9px] font-black uppercase text-muted-foreground tracking-widest mb-1">{info.label}</p>
