@@ -17,7 +17,7 @@ export async function collectUpcomingMatches() {
     const matches = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2', (elements: any[]) => {
       return elements.map((el: any) => {
         const title = el.querySelector('.ds-text-tight-s.ds-font-regular')?.textContent?.trim() || '';
-        const teams = Array.from(el.querySelectorAll('.ds-flex.ds-items-center.ds-min-w-0.ds-mr-1')).map(t => t.textContent?.trim() || '');
+        const teams = Array.from(el.querySelectorAll('.ds-flex.ds-items-center.ds-min-w-0.ds-mr-1')).map((t: any) => t.textContent?.trim() || '');
         const dateStr = el.closest('.ds-p-0')?.previousElementSibling?.textContent?.trim() || '';
         const venue = el.querySelector('.ds-text-tight-xs.ds-truncate')?.textContent?.trim() || '';
         
