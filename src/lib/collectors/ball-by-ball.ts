@@ -14,8 +14,8 @@ export async function collectCommentary(matchId: string, externalMatchUrl: strin
     await page.goto(`${externalMatchUrl}/live-cricket-score`, { waitUntil: 'networkidle' });
 
     // Scrape latest over/balls (Example for ESPN structure)
-    const events = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2', (elements: Element[]) => {
-      return elements.map((el: Element) => {
+    const events = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2', (elements: any[]) => {
+      return elements.map((el: any) => {
         const overBall = el.querySelector('.ds-text-tight-s.ds-font-bold')?.textContent?.trim() || '';
         const outcome = el.querySelector('.ds-flex.ds-items-center.ds-justify-center.ds-rounded-full')?.textContent?.trim() || '';
         const commentaryText = el.querySelector('.ds-text-tight-s.ds-font-regular')?.textContent?.trim() || '';

@@ -13,8 +13,8 @@ export async function discoverLiveMatches() {
     const url = 'https://www.espncricinfo.com/live-cricket-score';
     await page.goto(url, { waitUntil: 'networkidle' });
 
-    const liveMatches = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2', (elements: Element[]) => {
-      return elements.map((el: Element) => {
+    const liveMatches = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2.ds-mb-2', (elements: any[]) => {
+      return elements.map((el: any) => {
         const title = el.querySelector('.ds-text-tight-s.ds-font-bold')?.textContent?.trim() || '';
         const status = el.querySelector('.ds-text-tight-s.ds-font-regular.ds-text-ui-typo-mid')?.textContent?.trim() || '';
         

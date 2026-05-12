@@ -14,8 +14,8 @@ export async function collectUpcomingMatches() {
     const url = 'https://www.espncricinfo.com/cricket-schedule';
     await page.goto(url, { waitUntil: 'networkidle' });
 
-    const matches = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2', (elements: Element[]) => {
-      return elements.map((el: Element) => {
+    const matches = await page.$$eval('.ds-flex.ds-flex-col.ds-mt-2', (elements: any[]) => {
+      return elements.map((el: any) => {
         const title = el.querySelector('.ds-text-tight-s.ds-font-regular')?.textContent?.trim() || '';
         const teams = Array.from(el.querySelectorAll('.ds-flex.ds-items-center.ds-min-w-0.ds-mr-1')).map(t => t.textContent?.trim() || '');
         const dateStr = el.closest('.ds-p-0')?.previousElementSibling?.textContent?.trim() || '';
