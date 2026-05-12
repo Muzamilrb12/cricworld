@@ -1,41 +1,70 @@
 {
   "teams": {
     "test": [
-      { "rank": 1, "team": "India", "rating": "121", "points": "3,872" },
-      { "rank": 2, "team": "Australia", "rating": "119", "points": "3,567" },
-      { "rank": 3, "team": "England", "rating": "111", "points": "4,215" },
-      { "rank": 4, "team": "South Africa", "rating": "103", "points": "2,890" },
-      { "rank": 5, "team": "New Zealand", "rating": "100", "points": "2,450" }
+      { "rank": 1, "team": "Australia", "rating": 124, "points": 3450 },
+      { "rank": 2, "team": "India", "rating": 120, "points": 3820 },
+      { "rank": 3, "team": "South Africa", "rating": 115, "points": 2185 },
+      { "rank": 4, "team": "England", "rating": 110, "points": 4020 },
+      { "rank": 5, "team": "New Zealand", "rating": 102, "points": 2450 },
+      { "rank": 6, "team": "Pakistan", "rating": 98, "points": 1850 }
     ],
     "odi": [
-      { "rank": 1, "team": "India", "rating": "122", "points": "5,412" },
-      { "rank": 2, "team": "Australia", "rating": "117", "points": "4,120" },
-      { "rank": 3, "team": "South Africa", "rating": "110", "points": "3,210" },
-      { "rank": 4, "team": "Pakistan", "rating": "109", "points": "3,050" },
-      { "rank": 5, "team": "New Zealand", "rating": "102", "points": "2,840" }
+      { "rank": 1, "team": "India", "rating": 121, "points": 4820 },
+      { "rank": 2, "team": "Australia", "rating": 118, "points": 4150 },
+      { "rank": 3, "team": "South Africa", "rating": 110, "points": 3180 },
+      { "rank": 4, "team": "Pakistan", "rating": 108, "points": 2850 },
+      { "rank": 5, "team": "New Zealand", "rating": 101, "points": 2450 }
     ],
     "t20i": [
-      { "rank": 1, "team": "India", "rating": "266", "points": "15,412" },
-      { "rank": 2, "team": "England", "rating": "259", "points": "12,120" },
-      { "rank": 3, "team": "Australia", "rating": "254", "points": "10,210" },
-      { "rank": 4, "team": "Pakistan", "rating": "251", "points": "14,050" },
-      { "rank": 5, "team": "South Africa", "rating": "249", "points": "8,840" }
+      { "rank": 1, "team": "India", "rating": 267, "points": 12450 },
+      { "rank": 2, "team": "Australia", "rating": 259, "points": 10280 },
+      { "rank": 3, "team": "England", "rating": 255, "points": 9850 },
+      { "rank": 4, "team": "West Indies", "rating": 252, "points": 8450 },
+      { "rank": 5, "team": "Pakistan", "rating": 250, "points": 9120 }
     ]
   },
   "players": {
-    "odi_batting": [
-      { "rank": 1, "name": "Babar Azam", "team": "PAK", "rating": "824" },
-      { "rank": 2, "name": "Shubman Gill", "team": "IND", "rating": "801" },
-      { "rank": 3, "name": "Virat Kohli", "team": "IND", "rating": "768" },
-      { "rank": 4, "name": "Rohit Sharma", "team": "IND", "rating": "746" },
-      { "rank": 5, "name": "David Warner", "team": "AUS", "rating": "738" }
-    ],
-    "test_batting": [
-      { "rank": 1, "name": "Kane Williamson", "team": "NZ", "rating": "859" },
-      { "rank": 2, "name": "Joe Root", "team": "ENG", "rating": "824" },
-      { "rank": 3, "name": "Steve Smith", "team": "AUS", "rating": "818" },
-      { "rank": 4, "name": "Daryl Mitchell", "team": "NZ", "rating": "780" },
-      { "rank": 5, "name": "Babar Azam", "team": "PAK", "rating": "768" }
-    ]
+    "test": {
+      "batting": [
+        { "rank": 1, "name": "Joe Root", "team": "ENG", "rating": 899 },
+        { "rank": 2, "name": "Kane Williamson", "team": "NZ", "rating": 876 },
+        { "rank": 3, "name": "Babar Azam", "team": "PAK", "rating": 845 },
+        { "rank": 4, "name": "Steve Smith", "team": "AUS", "rating": 812 },
+        { "rank": 5, "name": "Virat Kohli", "team": "IND", "rating": 795 }
+      ],
+      "bowling": [
+        { "rank": 1, "name": "Jasprit Bumrah", "team": "IND", "rating": 875 },
+        { "rank": 2, "name": "Ravichandran Ashwin", "team": "IND", "rating": 842 },
+        { "rank": 3, "name": "Pat Cummins", "team": "AUS", "rating": 820 }
+      ]
+    },
+    "odi": {
+      "batting": [
+        { "rank": 1, "name": "Babar Azam", "team": "PAK", "rating": 824 },
+        { "rank": 2, "name": "Shubman Gill", "team": "IND", "rating": 812 },
+        { "rank": 3, "name": "Virat Kohli", "team": "IND", "rating": 788 },
+        { "rank": 4, "name": "Travis Head", "team": "AUS", "rating": 775 },
+        { "rank": 5, "name": "Rohit Sharma", "team": "IND", "rating": 762 }
+      ],
+      "bowling": [
+        { "rank": 1, "name": "Keshav Maharaj", "team": "SA", "rating": 741 },
+        { "rank": 2, "name": "Josh Hazlewood", "team": "AUS", "rating": 703 },
+        { "rank": 3, "name": "Adam Zampa", "team": "AUS", "rating": 685 }
+      ]
+    },
+    "t20i": {
+      "batting": [
+        { "rank": 1, "name": "Suryakumar Yadav", "team": "IND", "rating": 861 },
+        { "rank": 2, "name": "Phil Salt", "team": "ENG", "rating": 802 },
+        { "rank": 3, "name": "Babar Azam", "team": "PAK", "rating": 765 },
+        { "rank": 4, "name": "Mohammad Rizwan", "team": "PAK", "rating": 748 },
+        { "rank": 5, "name": "Travis Head", "team": "AUS", "rating": 732 }
+      ],
+      "bowling": [
+        { "rank": 1, "name": "Adil Rashid", "team": "ENG", "rating": 726 },
+        { "rank": 2, "name": "Wanindu Hasaranga", "team": "SL", "rating": 695 },
+        { "rank": 3, "name": "Ravi Bishnoi", "team": "IND", "rating": 682 }
+      ]
+    }
   }
 }

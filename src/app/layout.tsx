@@ -47,25 +47,56 @@ export default function RootLayout({
               </span>
             </div>
             
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-              <a href="/" className="hover:text-accent transition-colors">Home</a>
-              <a href="/live" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-                <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>
-                Live Scores
-              </a>
-              <a href="/schedule" className="hover:text-accent transition-colors">Schedule</a>
-              <a href="/leagues" className="hover:text-accent transition-colors font-bold text-accent">Leagues</a>
-              <a href="/series" className="hover:text-accent transition-colors">Series</a>
-              <a href="/news" className="hover:text-accent transition-colors">News</a>
-              <a href="/fantasy" className="hover:text-accent transition-colors">Fantasy</a>
-              <a href="/points-table" className="hover:text-accent transition-colors">Points Table</a>
-              <a href="/videos" className="hover:text-accent transition-colors">Videos</a>
-              <a href="/stats" className="hover:text-accent transition-colors">Stats</a>
-              <a href="/rankings" className="hover:text-accent transition-colors">Rankings</a>
-              <a href="/about" className="hover:text-accent transition-colors">About</a>
+            <div className="hidden lg:flex items-center gap-6 text-sm font-black italic uppercase tracking-tighter">
+              {/* Matches Group */}
+              <div className="relative group/nav py-4">
+                <button className="flex items-center gap-1.5 hover:text-accent transition-colors">
+                  Matches <svg className="w-3 h-3 group-hover/nav:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div className="absolute top-full left-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
+                  <a href="/live" className="flex items-center gap-2 p-3 rounded-xl hover:bg-accent/10 hover:text-accent transition-all">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span> Live Scores
+                  </a>
+                  <a href="/schedule" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Schedule</a>
+                  <a href="/series" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Series Archives</a>
+                </div>
+              </div>
 
+              {/* Analysis Group */}
+              <div className="relative group/nav py-4">
+                <button className="flex items-center gap-1.5 hover:text-accent transition-colors">
+                  Analysis <svg className="w-3 h-3 group-hover/nav:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div className="absolute top-full left-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
+                  <a href="/rankings" className="p-3 rounded-xl hover:bg-white/5 block transition-all text-accent">ICC Rankings</a>
+                  <a href="/points-table" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Points Table</a>
+                  <a href="/stats" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Player Stats</a>
+                </div>
+              </div>
 
+              {/* Features Group */}
+              <div className="relative group/nav py-4">
+                <button className="flex items-center gap-1.5 hover:text-accent transition-colors">
+                  Features <svg className="w-3 h-3 group-hover/nav:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div className="absolute top-full left-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
+                  <a href="/fantasy" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Fantasy Pro</a>
+                  <a href="/news" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Latest News</a>
+                  <a href="/videos" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Highlights</a>
+                </div>
+              </div>
 
+              {/* Admin Group */}
+              <div className="relative group/nav py-4">
+                <button className="flex items-center gap-1.5 hover:text-accent transition-colors text-white/50">
+                  More <svg className="w-3 h-3 group-hover/nav:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div className="absolute top-full right-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
+                  <a href="/about" className="p-3 rounded-xl hover:bg-white/5 block transition-all">About Us</a>
+                  <a href="/admin/live-editor" className="p-3 rounded-xl hover:bg-accent/10 text-accent font-bold block transition-all">Live Editor</a>
+                  <a href="/dashboard" className="p-3 rounded-xl hover:bg-white/5 block transition-all">My Dashboard</a>
+                </div>
+              </div>
             </div>
 
             <div className="flex items-center gap-4">
