@@ -1,41 +1,59 @@
-[
-  {
+{
+  "babar-azam": {
     "id": "babar-azam",
     "name": "Babar Azam",
+    "fullName": "Mohammad Babar Azam",
     "team": "Pakistan",
     "role": "Batter",
-    "image": "BA",
+    "battingStyle": "Right-hand bat",
+    "bowlingStyle": "Right-arm offbreak",
+    "born": "Oct 15, 1994 (31 years)",
+    "birthPlace": "Lahore, Punjab",
+    "height": "5 ft 11 in",
+    "bio": "Babar Azam is the backbone of Pakistan's batting lineup across all formats. Known for his elegant cover drive and calm temperament, he has consistently ranked among the top batsmen in the world. He led Pakistan to several historic victories and holds numerous records in ODI and T20I cricket.",
     "stats": {
-      "test": { "matches": 52, "runs": 3962, "avg": "45.86", "sr": "54.12", "100s": 9, "50s": 26 },
-      "odi": { "matches": 117, "runs": 5729, "avg": "56.72", "sr": "88.75", "100s": 19, "50s": 32 },
-      "t20i": { "matches": 119, "runs": 4145, "avg": "41.03", "sr": "129.08", "100s": 3, "50s": 36 }
+      "test": { "matches": 54, "runs": 3962, "avg": 45.85, "sr": 54.2, "100s": 9, "50s": 26, "hs": 196 },
+      "odi": { "matches": 117, "runs": 5729, "avg": 56.72, "sr": 88.5, "100s": 19, "50s": 32, "hs": 158 },
+      "t20i": { "matches": 123, "runs": 4145, "avg": 41.03, "sr": 129.1, "100s": 3, "50s": 36, "hs": 122 }
     },
-    "bio": "Babar Azam is a Pakistani international cricketer and former captain of the Pakistan national cricket team in all formats."
+    "recentForm": ["34", "102", "55", "12", "76"]
   },
-  {
+  "virat-kohli": {
     "id": "virat-kohli",
     "name": "Virat Kohli",
+    "fullName": "Virat Kohli",
     "team": "India",
     "role": "Batter",
-    "image": "VK",
+    "battingStyle": "Right-hand bat",
+    "bowlingStyle": "Right-arm medium",
+    "born": "Nov 05, 1888 (37 years)",
+    "birthPlace": "Delhi",
+    "height": "5 ft 9 in",
+    "bio": "Virat Kohli is widely regarded as one of the greatest batsmen in the history of the sport. His aggressive approach, exceptional fitness, and chase-master abilities have redefined modern batting. He has over 80 international centuries and continues to be a dominant force in the IPL with RCB.",
     "stats": {
-      "test": { "matches": 113, "runs": 8848, "avg": "49.15", "sr": "55.56", "100s": 29, "50s": 30 },
-      "odi": { "matches": 292, "runs": 13848, "avg": "58.67", "sr": "93.62", "100s": 50, "50s": 72 },
-      "t20i": { "matches": 125, "runs": 4188, "avg": "48.69", "sr": "137.04", "100s": 1, "50s": 38 }
+      "test": { "matches": 113, "runs": 8848, "avg": 49.15, "sr": 55.5, "100s": 29, "50s": 30, "hs": 254 },
+      "odi": { "matches": 295, "runs": 13848, "avg": 58.67, "sr": 93.6, "100s": 50, "50s": 72, "hs": 183 },
+      "t20i": { "matches": 125, "runs": 4188, "avg": 48.69, "sr": 137.0, "100s": 1, "50s": 38, "hs": 122 }
     },
-    "bio": "Virat Kohli is an Indian international cricketer and the former captain of the Indian national cricket team."
+    "recentForm": ["45", "18", "76", "101", "54"]
   },
-  {
-    "id": "shaheen-afridi",
-    "name": "Shaheen Afridi",
-    "team": "Pakistan",
-    "role": "Bowler",
-    "image": "SA",
+  "travis-head": {
+    "id": "travis-head",
+    "name": "Travis Head",
+    "fullName": "Travis Michael Head",
+    "team": "Australia",
+    "role": "Batter / All-rounder",
+    "battingStyle": "Left-hand bat",
+    "bowlingStyle": "Right-arm offbreak",
+    "born": "Dec 29, 1993 (32 years)",
+    "birthPlace": "Adelaide, South Australia",
+    "height": "5 ft 10 in",
+    "bio": "Travis Head is the definition of an impact player. His fearless batting at the top of the order has been instrumental in Australia's recent World Cup and WTC triumphs. In the IPL, he has become a nightmare for bowlers with his explosive starts for SRH.",
     "stats": {
-      "test": { "matches": 29, "wickets": 113, "avg": "26.71", "eco": "3.08", "best": "6/51" },
-      "odi": { "matches": 53, "wickets": 104, "avg": "23.94", "eco": "5.45", "best": "6/35" },
-      "t20i": { "matches": 66, "wickets": 91, "avg": "20.36", "eco": "7.75", "best": "4/22" }
+      "test": { "matches": 49, "runs": 3189, "avg": 41.96, "sr": 64.2, "100s": 7, "50s": 16, "hs": 175 },
+      "odi": { "matches": 65, "runs": 2507, "avg": 44.76, "sr": 105.1, "100s": 5, "50s": 16, "hs": 152 },
+      "t20i": { "matches": 38, "runs": 1054, "avg": 32.93, "sr": 158.4, "100s": 0, "50s": 6, "hs": 91 }
     },
-    "bio": "Shaheen Shah Afridi is a Pakistani professional cricketer who bowls left-arm fast for the Pakistan national cricket team."
+    "recentForm": ["89", "12", "102", "54", "33"]
   }
-]
+}

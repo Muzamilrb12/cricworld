@@ -170,14 +170,25 @@ export default async function MatchDetailPage({ params }: PageProps) {
                     <h3 className="text-xl font-black italic uppercase">{team.name} XI</h3>
                   </div>
                   <div className="space-y-3">
-                    {team.playing11?.map((player: string, pIdx: number) => (
-                      <div key={pIdx} className="flex items-center gap-4 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-accent/30 transition-all cursor-default group">
-                        <span className="text-[10px] font-black italic text-muted-foreground/30 group-hover:text-accent transition-colors">{String(pIdx + 1).padStart(2, '0')}</span>
-                        <span className="text-sm font-bold group-hover:text-white transition-colors">{player}</span>
-                        {player.includes("(c)") && <span className="ml-auto text-[8px] bg-accent text-background font-black px-1.5 py-0.5 rounded uppercase">Captain</span>}
-                        {player.includes("(wk)") && <span className="ml-auto text-[8px] bg-blue-500 text-white font-black px-1.5 py-0.5 rounded uppercase">Keeper</span>}
-                      </div>
-                    )) || (
+                    {team.playing11?.map((player: string, pIdx: number) => {
+                      const playerId = player.toLowerCase().replace(/ \(c\)| \(wk\)/g, "").replace(/ /g, "-");
+                      const hasProfile = ["babar-azam", "virat-kohli", "travis-head"].includes(playerId);
+                      
+                      return (
+                        <div key={pIdx} className="flex items-center gap-4 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-accent/30 transition-all group">
+                          <span className="text-[10px] font-black italic text-muted-foreground/30 group-hover:text-accent transition-colors">{String(pIdx + 1).padStart(2, '0')}</span>
+                          {hasProfile ? (
+                            <a href={`/players/${playerId}`} className="text-sm font-bold group-hover:text-accent transition-colors underline decoration-accent/30 underline-offset-4">
+                              {player}
+                            </a>
+                          ) : (
+                            <span className="text-sm font-bold group-hover:text-white transition-colors">{player}</span>
+                          )}
+                          {player.includes("(c)") && <span className="ml-auto text-[8px] bg-accent text-background font-black px-1.5 py-0.5 rounded uppercase">Captain</span>}
+                          {player.includes("(wk)") && <span className="ml-auto text-[8px] bg-blue-500 text-white font-black px-1.5 py-0.5 rounded uppercase">Keeper</span>}
+                        </div>
+                      );
+                    }) || (
                       <p className="text-xs text-muted-foreground italic">Lineups not announced yet.</p>
                     )}
                   </div>
