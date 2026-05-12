@@ -114,6 +114,77 @@ export default function FantasyPage() {
               ))}
             </div>
           </div>
+
+          {/* Points System & Rules */}
+          <div className="space-y-8">
+            <h2 className="text-3xl font-black italic uppercase tracking-tighter text-accent">Fantasy Point System</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Batting Points */}
+              <div className="glass p-8 rounded-[2.5rem] border border-white/5 bg-gradient-to-br from-orange-500/5 to-transparent">
+                <h3 className="text-xl font-black italic uppercase mb-6 flex items-center gap-3">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full"></span> Batting
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    { label: "Run Scored", pts: "+1" },
+                    { label: "Boundary Bonus", pts: "+1" },
+                    { label: "Six Bonus", pts: "+2" },
+                    { label: "30 Run Bonus", pts: "+4" },
+                    { label: "Half-Century Bonus", pts: "+8" },
+                    { label: "Century Bonus", pts: "+16" },
+                    { label: "Duck (Dismissal for 0)", pts: "-2" }
+                  ].map((rule, idx) => (
+                    <div key={idx} className="flex justify-between items-center text-xs border-b border-white/5 pb-2">
+                      <span className="text-muted-foreground font-bold uppercase tracking-wider">{rule.label}</span>
+                      <span className="font-black italic text-orange-500">{rule.pts}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bowling Points */}
+              <div className="glass p-8 rounded-[2.5rem] border border-white/5 bg-gradient-to-br from-purple-500/5 to-transparent">
+                <h3 className="text-xl font-black italic uppercase mb-6 flex items-center gap-3">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full"></span> Bowling
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    { label: "Wicket (Excl. Run Out)", pts: "+25" },
+                    { label: "Maiden Over", pts: "+12" },
+                    { label: "3 Wicket Bonus", pts: "+4" },
+                    { label: "4 Wicket Bonus", pts: "+8" },
+                    { label: "5 Wicket Bonus", pts: "+16" },
+                    { label: "Economy Rate < 5", pts: "+6" },
+                    { label: "Economy Rate > 12", pts: "-6" }
+                  ].map((rule, idx) => (
+                    <div key={idx} className="flex justify-between items-center text-xs border-b border-white/5 pb-2">
+                      <span className="text-muted-foreground font-bold uppercase tracking-wider">{rule.label}</span>
+                      <span className="font-black italic text-purple-500">{rule.pts}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* General Rules */}
+            <div className="glass p-8 rounded-[2.5rem] border border-accent/20 bg-accent/5">
+              <h3 className="text-xl font-black italic uppercase mb-6 text-accent">Crucial Rules</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="space-y-2">
+                  <p className="text-[10px] font-black uppercase text-accent tracking-widest">Captaincy</p>
+                  <p className="text-sm font-bold">Captain earns <span className="text-accent text-lg">2x</span> points for every action.</p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-[10px] font-black uppercase text-accent tracking-widest">Vice-Captaincy</p>
+                  <p className="text-sm font-bold">Vice-Captain earns <span className="text-accent text-lg">1.5x</span> points for every action.</p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-[10px] font-black uppercase text-accent tracking-widest">Fielding</p>
+                  <p className="text-sm font-bold">Catch: +8 pts | Run out: +12 pts | Stumping: +12 pts</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Sidebar */}
