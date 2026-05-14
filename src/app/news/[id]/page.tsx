@@ -1,5 +1,5 @@
 import newsData from "../../../../data/news.json";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -7,9 +7,16 @@ interface PageProps {
 
 export default async function NewsDetailPage({ params }: PageProps) {
   const { id } = await params;
+
+  // Google News articles (prefixed gn-) link externally — redirect handled client-side
+  // Static news articles are served locally
   const article = (newsData as any[]).find((n: any) => n.id === id);
 
-  if (!article) return notFound();
+  // If not found in static data, redirect to news list
+  // (Google News articles open directly via target="_blank" links in the feed)
+  if (!article) {
+    redirect("/news");
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -33,8 +40,8 @@ export default async function NewsDetailPage({ params }: PageProps) {
 
         {/* Featured Image */}
         <div className="relative aspect-video rounded-[3rem] overflow-hidden glass border border-white/5 mb-12 shadow-2xl">
-          <img 
-            src={article.imageUrl} 
+          <img
+            src={article.imageUrl}
             alt={article.title}
             className="w-full h-full object-cover"
           />
@@ -67,8 +74,8 @@ export default async function NewsDetailPage({ params }: PageProps) {
             </div>
           </div>
           <div className="flex gap-4">
-            <button className="px-6 py-2 rounded-xl glass border border-white/5 text-[10px] font-black uppercase tracking-widest hover:border-accent transition-colors">Share News</button>
-            <button className="px-6 py-2 rounded-xl bg-accent text-background text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform">Follow Updates</button>
+            <a href="/news" className="px-6 py-2 rounded-xl glass border border-white/5 text-[10px] font-black uppercase tracking-widest hover:border-accent transition-colors">← All News</a>
+            <a href="/news" className="px-6 py-2 rounded-xl bg-accent text-background text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform">Live News Feed</a>
           </div>
         </div>
       </article>

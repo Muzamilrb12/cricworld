@@ -1,13 +1,12 @@
 import Image from "next/image";
 import MatchCard from "@/components/MatchCard";
 import AdBanner from "@/components/AdBanner";
+import GoogleNewsFeed from "@/components/GoogleNewsFeed";
 import matchesData from "../../data/matches.json";
-import newsData from "../../data/news.json";
 import pointsTableData from "../../data/points-table.json";
 
 export default function Home() {
   const matches = matchesData || [];
-  const news = (newsData || []).slice(0, 3);
   const iplTable = (pointsTableData as any)["leagues"]?.["ipl-2026"]?.slice(0, 5) || [];
 
   return (
@@ -48,7 +47,7 @@ export default function Home() {
       {/* Live Matches Grid */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold">Live & Upcoming</h2>
+          <h2 className="text-2xl font-bold">Live &amp; Upcoming</h2>
           <a href="/schedule" className="text-accent text-sm font-bold hover:underline">View All Schedule</a>
         </div>
         
@@ -67,33 +66,19 @@ export default function Home() {
 
       {/* Stats and News Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Live Google News Feed */}
         <div className="lg:col-span-2">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold">Latest Cricket News</h2>
-            <a href="/news" className="text-accent text-sm font-bold hover:underline">Read More</a>
+            <div className="flex items-center gap-3">
+              <h2 className="text-2xl font-bold">Latest Cricket News</h2>
+              <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-500/10 border border-red-500/20">
+                <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-[9px] font-black uppercase tracking-widest text-red-400">Live</span>
+              </div>
+            </div>
+            <a href="/news" className="text-accent text-sm font-bold hover:underline">View All News</a>
           </div>
-          <div className="space-y-6">
-            {news.map((item: any) => (
-              <a href={`/news/${item.id}`} key={item.id} className="flex gap-6 p-6 rounded-[2rem] glass hover:bg-white/5 transition-colors cursor-pointer group border border-white/5 hover:border-accent/30">
-                <div className="w-40 h-28 bg-zinc-800 rounded-2xl overflow-hidden shrink-0 border border-white/5">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="flex-1 flex flex-col justify-center">
-                  <span className="text-[9px] text-accent font-black uppercase tracking-widest mb-2">{item.category}</span>
-                  <h3 className="font-black italic uppercase tracking-tighter group-hover:text-accent transition-colors mb-2 leading-tight line-clamp-2">{item.title}</h3>
-                  <div className="flex items-center gap-2 mt-auto">
-                    <span className="text-[10px] text-muted-foreground uppercase font-bold">{item.time}</span>
-                    <span className="w-1 h-1 bg-white/20 rounded-full"></span>
-                    <span className="text-[10px] text-muted-foreground uppercase font-bold">{item.author}</span>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
+          <GoogleNewsFeed limit={4} layout="compact" showHeader={false} />
         </div>
 
         <div className="space-y-8">
