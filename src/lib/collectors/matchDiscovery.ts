@@ -9,9 +9,42 @@ export async function discoverLiveMatches() {
   };
 
   try {
-    console.log('[Discovery] Trying ESPN fallback...');
+    console.log('[Discovery] Trying Google Search...');
+    const googleUrl = 'https://www.google.com/search?q=cricket+live+score';
+    const googleRes = await fetch(googleUrl, { headers });
+    const googleHtml = await googleRes.text();
+    const $g = cheerio.load(googleHtml);
+    const googleMatches: any[] = [];
+
+    // Attempt to scrape Google's live score cards
+    $g('div[data-entityid*="match"]').each((_: any, el: any) => {
+      const teams = $g(el).find('.ellipsis-klp').map((_: any, t: any) => $g(t).text().trim()).get();
+      const status = $g(el).find('.imso_mh__st-r-v').text().trim() || $g(el).find('.imso_mh__pst-m-v').text().trim();
+      const scores = $g(el).find('.imso_mh__l-sc, .imso_mh__r-sc').map((_: any, s: any) => $g(s).text().trim()).get();
+      
+      if (teams.length >= 2) {
+        googleMatches.push({
+          id: `google-${Math.random().toString(36).substr(2, 9)}`,
+          name: `${teams[0]} vs ${teams[1]}`,
+          status: status || 'Live',
+          scoreText: scores.length >= 2 ? `${teams[0]}: ${scores[0]}, ${teams[1]}: ${scores[1]}` : '',
+          matchStarted: true,
+          matchEnded: false,
+          source: 'Google Search',
+          sourceUrl: googleUrl
+        });
+      }
+    });
+
+    if (googleMatches.length > 0) {
+      console.log(`[Discovery] Found ${googleMatches.length} matches on Google`);
+      return googleMatches;
+    }
+
+    console.log('[Discovery] Google empty, trying ESPN fallback...');
     const url = 'https://www.espncricinfo.com/live-cricket-score';
     const res = await fetch(url, { headers });
+
     
     if (res.status === 403) {
       console.log('[Discovery] ESPN blocked us (403), trying Cricbuzz backup...');

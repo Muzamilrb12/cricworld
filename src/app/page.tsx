@@ -3,6 +3,8 @@ import MatchCard from "@/components/MatchCard";
 import AdBanner from "@/components/AdBanner";
 import GoogleNewsFeed from "@/components/GoogleNewsFeed";
 import LiveMatchesFeed from "@/components/LiveMatchesFeed";
+import UpcomingSeries from "@/components/UpcomingSeries";
+
 
 
 export default function Home() {
@@ -55,9 +57,9 @@ export default function Home() {
       </section>
 
       {/* Stats and News Grid */}
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Live Google News Feed */}
-        <div>
+        <div className="lg:col-span-2">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
               <h2 className="text-2xl font-bold">Latest Cricket News</h2>
@@ -68,7 +70,31 @@ export default function Home() {
             </div>
             <a href="/news" className="text-accent text-sm font-bold hover:underline">View All News</a>
           </div>
-          <GoogleNewsFeed limit={6} layout="grid" showHeader={false} />
+          <GoogleNewsFeed limit={6} layout="compact" showHeader={false} />
+        </div>
+
+        {/* Sidebar: Upcoming Series */}
+        <div className="space-y-8">
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <h2 className="text-2xl font-bold">Upcoming Series</h2>
+              <div className="px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20">
+                <span className="text-[9px] font-black uppercase tracking-widest text-accent">Schedules</span>
+              </div>
+            </div>
+            <UpcomingSeries />
+          </div>
+          
+          {/* Quick Stats / Ad space */}
+          <div className="glass p-6 rounded-3xl border border-white/5 bg-gradient-to-br from-accent/5 to-transparent">
+            <h3 className="text-sm font-black uppercase tracking-widest text-accent mb-4">Pro Analytics</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed mb-6">
+              Get advanced player match-ups, venue insights, and live win probabilities for all major series.
+            </p>
+            <button className="w-full py-3 rounded-xl bg-accent text-background font-black uppercase tracking-widest text-[10px] hover:shadow-[0_0_20px_rgba(0,255,136,0.3)] transition-all">
+              Go Premium
+            </button>
+          </div>
         </div>
       </div>
     </div>

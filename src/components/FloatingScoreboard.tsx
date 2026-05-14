@@ -25,7 +25,8 @@ export default function FloatingScoreboard() {
 
   useEffect(() => {
     fetchLive();
-    const interval = setInterval(fetchLive, 30000); // 30s update
+    const interval = setInterval(fetchLive, 60000); // 60s update
+
     return () => clearInterval(interval);
   }, [fetchLive]);
 
