@@ -24,12 +24,16 @@ interface GoogleNewsFeedProps {
   layout?: 'grid' | 'compact';
   /** Show the header? */
   showHeader?: boolean;
+  /** Specific topic to filter by: 'international' or 'leagues' */
+  topic?: 'international' | 'leagues' | string;
 }
+
 
 export default function GoogleNewsFeed({
   limit = 20,
   layout = 'grid',
   showHeader = true,
+  topic,
 }: GoogleNewsFeedProps) {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
@@ -42,7 +46,12 @@ export default function GoogleNewsFeed({
     try {
       if (isManual) setIsRefreshing(true);
       
-      const res = await fetch('/api/google-news', { cache: 'no-store' });
+      const url = topic 
+        ? `/api/google-news?topics=${topic === 'international' ? 'CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB' : topic === 'leagues' ? 'CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp1ZEdvU0JXVnVMVWRDR2dKSlRpZ0FQAQ' : topic}`
+        : '/api/google-news';
+
+      const res = await fetch(url, { cache: 'no-store' });
+
       const data = await res.json();
 
       if (data.articles && data.articles.length > 0) {

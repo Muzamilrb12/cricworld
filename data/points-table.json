@@ -36,16 +36,16 @@
   },
   "leagues": {
     "ipl-2026": [
-      { "rank": 1, "team": "RCB", "fullName": "Royal Challengers Bengaluru", "p": 14, "w": 10, "l": 4, "nr": 0, "nrr": "+0.825", "pts": 20 },
-      { "rank": 2, "team": "SRH", "fullName": "Sunrisers Hyderabad", "p": 13, "w": 8, "l": 5, "nr": 0, "nrr": "+0.542", "pts": 16 },
-      { "rank": 3, "team": "GT", "fullName": "Gujarat Titans", "p": 13, "w": 8, "l": 5, "nr": 0, "nrr": "+0.312", "pts": 16 },
-      { "rank": 4, "team": "PBKS", "fullName": "Punjab Kings", "p": 14, "w": 8, "l": 6, "nr": 0, "nrr": "+0.180", "pts": 16 },
-      { "rank": 5, "team": "CSK", "fullName": "Chennai Super Kings", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "+0.050", "pts": 14 },
-      { "rank": 6, "team": "RR", "fullName": "Rajasthan Royals", "p": 13, "w": 6, "l": 7, "nr": 0, "nrr": "-0.150", "pts": 12 },
-      { "rank": 7, "team": "DC", "fullName": "Delhi Capitals", "p": 14, "w": 6, "l": 8, "nr": 0, "nrr": "-0.245", "pts": 12 },
-      { "rank": 8, "team": "KKR", "fullName": "Kolkata Knight Riders", "p": 13, "w": 5, "l": 8, "nr": 0, "nrr": "-0.312", "pts": 10 },
-      { "rank": 9, "team": "MI", "fullName": "Mumbai Indians", "p": 14, "w": 4, "l": 10, "nr": 0, "nrr": "-0.612", "pts": 8, "status": "Eliminated" },
-      { "rank": 10, "team": "LSG", "fullName": "Lucknow Super Giants", "p": 14, "w": 4, "l": 10, "nr": 0, "nrr": "-0.752", "pts": 8, "status": "Eliminated" }
+      { "rank": 1, "team": "KKR", "fullName": "Kolkata Knight Riders", "p": 14, "w": 9, "l": 3, "nr": 2, "nrr": "+1.428", "pts": 20 },
+      { "rank": 2, "team": "SRH", "fullName": "Sunrisers Hyderabad", "p": 14, "w": 8, "l": 5, "nr": 1, "nrr": "+0.414", "pts": 17 },
+      { "rank": 3, "team": "RR", "fullName": "Rajasthan Royals", "p": 14, "w": 8, "l": 5, "nr": 1, "nrr": "+0.273", "pts": 17 },
+      { "rank": 4, "team": "RCB", "fullName": "Royal Challengers Bengaluru", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "+0.459", "pts": 14 },
+      { "rank": 5, "team": "CSK", "fullName": "Chennai Super Kings", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "+0.392", "pts": 14 },
+      { "rank": 6, "team": "DC", "fullName": "Delhi Capitals", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "-0.377", "pts": 14 },
+      { "rank": 7, "team": "LSG", "fullName": "Lucknow Super Giants", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "-0.667", "pts": 14 },
+      { "rank": 8, "team": "GT", "fullName": "Gujarat Titans", "p": 14, "w": 5, "l": 7, "nr": 2, "nrr": "-1.063", "pts": 12 },
+      { "rank": 9, "team": "PBKS", "fullName": "Punjab Kings", "p": 14, "w": 5, "l": 9, "nr": 0, "nrr": "-0.353", "pts": 10 },
+      { "rank": 10, "team": "MI", "fullName": "Mumbai Indians", "p": 14, "w": 4, "l": 10, "nr": 0, "nrr": "-0.318", "pts": 8, "status": "Eliminated" }
     ],
     "psl-2025": [
       { "rank": 1, "team": "LQ", "fullName": "Lahore Qalandars", "p": 10, "w": 7, "l": 3, "nr": 0, "nrr": "+0.682", "pts": 14 },

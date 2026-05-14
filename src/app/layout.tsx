@@ -81,6 +81,18 @@ export default function RootLayout({
                 </div>
               </div>
 
+              {/* News Group */}
+              <div className="relative group/nav py-4">
+                <button className="flex items-center gap-1.5 hover:text-accent transition-colors">
+                  News <svg className="w-3 h-3 group-hover/nav:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div className="absolute top-full left-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
+                  <a href="/news" className="p-3 rounded-xl hover:bg-accent/10 text-accent transition-all block">Latest News</a>
+                  <a href="/news?topic=international" className="p-3 rounded-xl hover:bg-white/5 block transition-all">International News</a>
+                  <a href="/news?topic=leagues" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Leagues News</a>
+                </div>
+              </div>
+
               {/* Features Group */}
               <div className="relative group/nav py-4">
                 <button className="flex items-center gap-1.5 hover:text-accent transition-colors">
@@ -88,7 +100,6 @@ export default function RootLayout({
                 </button>
                 <div className="absolute top-full left-0 w-48 glass rounded-2xl p-2 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all border border-white/5 shadow-2xl">
                   <a href="/fantasy" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Fantasy Pro</a>
-                  <a href="/news" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Latest News</a>
                   <a href="/videos" className="p-3 rounded-xl hover:bg-white/5 block transition-all">Highlights</a>
                 </div>
               </div>
