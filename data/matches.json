@@ -55,16 +55,16 @@
     "status": "Live",
     "teams": [
       {
-        "name": "Leics",
+        "name": "LEI",
         "shortName": "LEI",
-        "score": "Yet to bat",
+        "score": "(1 ov) 4/0",
         "overs": "0",
         "isBatting": false
       },
       {
-        "name": "Essex",
+        "name": "ESS",
         "shortName": "ESS",
-        "score": "Yet to bat",
+        "score": "(0.4 ov) 4/0",
         "overs": "0",
         "isBatting": false
       }
@@ -79,16 +79,16 @@
     "status": "Live",
     "teams": [
       {
-        "name": "Kent",
+        "name": "KEN",
         "shortName": "KEN",
-        "score": "Yet to bat",
+        "score": "(1 ov) 9/0",
         "overs": "0",
         "isBatting": false
       },
       {
-        "name": "Durham",
+        "name": "DUR",
         "shortName": "DUR",
-        "score": "Yet to bat",
+        "score": "(0.4 ov) 0/1",
         "overs": "0",
         "isBatting": false
       }
@@ -177,7 +177,7 @@
       {
         "name": "HAM-W",
         "shortName": "HAM",
-        "score": "(6.4/50 ov) 21/2",
+        "score": "(8/50 ov) 22/2",
         "overs": "0",
         "isBatting": false
       },
@@ -199,15 +199,15 @@
     "status": "Live",
     "teams": [
       {
-        "name": "Smrst 2nd XI",
-        "shortName": "SMR",
+        "name": "So2XI",
+        "shortName": "SO2",
         "score": "Yet to bat",
         "overs": "0",
         "isBatting": false
       },
       {
-        "name": "Worcs 2nd XI",
-        "shortName": "WOR",
+        "name": "Wo2XI",
+        "shortName": "WO2",
         "score": "Yet to bat",
         "overs": "0",
         "isBatting": false
