@@ -52,14 +52,22 @@ export async function GET(req: Request, { params }: RouteParams) {
             matchType: localMatch.format || 'LIVE MATCH',
             teamInfo: localMatch.teams.map((t: any) => ({ name: t.name, shortname: t.shortName })),
             score: localMatch.teams.map((t: any) => {
-              // Parse "170/4" or "205"
-              const scoreStr = t.score?.replace(/.*\) /, '') || '0/0';
+              let scoreStr = t.score || '0/0';
+              let parsedOvers = parseFloat(t.overs || '0');
+              
+              // Extract overs from "(19.5/20 ov, T:201) 205/4"
+              const overMatch = scoreStr.match(/\(([\d.]+)\/?.*ov/i);
+              if (overMatch) {
+                 parsedOvers = parseFloat(overMatch[1]);
+              }
+              
+              scoreStr = scoreStr.replace(/.*\) /, '').trim();
               const parts = scoreStr.split('/');
               return {
                 inning: t.shortName,
                 r: parseInt(parts[0]) || 0,
                 w: parseInt(parts[1]) || 0,
-                o: parseFloat(t.overs || '0')
+                o: parsedOvers
               };
             }),
             scorecard: [], // We don't have deep batting tables from the summary scraper

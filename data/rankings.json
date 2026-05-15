@@ -786,53 +786,125 @@
       "batting": [
         {
           "rank": 1,
-          "name": "Joe Root",
+          "name": "JE Root",
           "team": "ENG",
-          "rating": 899
+          "rating": 880
         },
         {
           "rank": 2,
-          "name": "Kane Williamson",
-          "team": "NZ",
-          "rating": 876
+          "name": "HC Brook",
+          "team": "ENG",
+          "rating": 857
         },
         {
           "rank": 3,
-          "name": "Yashasvi Jaiswal",
-          "team": "IND",
-          "rating": 855
+          "name": "TM Head",
+          "team": "AUS",
+          "rating": 853
         },
         {
           "rank": 4,
-          "name": "Babar Azam",
-          "team": "PAK",
-          "rating": 845
+          "name": "SPD Smith",
+          "team": "AUS",
+          "rating": 831
         },
         {
           "rank": 5,
-          "name": "Steve Smith",
-          "team": "AUS",
-          "rating": 812
+          "name": "KS Williamson",
+          "team": "NZ",
+          "rating": 822
+        },
+        {
+          "rank": 6,
+          "name": "PHKD Mendis",
+          "team": "SL",
+          "rating": 781
+        },
+        {
+          "rank": 7,
+          "name": "T Bavuma",
+          "team": "SA",
+          "rating": 775
+        },
+        {
+          "rank": 8,
+          "name": "YBK Jaiswal",
+          "team": "IND",
+          "rating": 750
+        },
+        {
+          "rank": 9,
+          "name": "Saud Shakeel",
+          "team": "PAK",
+          "rating": 734
+        },
+        {
+          "rank": 10,
+          "name": "Shubman Gill",
+          "team": "IND",
+          "rating": 730
         }
       ],
       "bowling": [
         {
           "rank": 1,
-          "name": "Jasprit Bumrah",
+          "name": "JJ Bumrah",
           "team": "IND",
-          "rating": 875
+          "rating": 879
         },
         {
           "rank": 2,
-          "name": "Ravichandran Ashwin",
-          "team": "IND",
-          "rating": 842
+          "name": "Noman Ali",
+          "team": "PAK",
+          "rating": 843
         },
         {
           "rank": 3,
-          "name": "Pat Cummins",
+          "name": "MA Starc",
+          "team": "AUS",
+          "rating": 838
+        },
+        {
+          "rank": 4,
+          "name": "MJ Henry",
+          "team": "NZ",
+          "rating": 836
+        },
+        {
+          "rank": 5,
+          "name": "PJ Cummins",
+          "team": "AUS",
+          "rating": 832
+        },
+        {
+          "rank": 6,
+          "name": "M Jansen",
+          "team": "SA",
+          "rating": 825
+        },
+        {
+          "rank": 7,
+          "name": "SM Boland",
           "team": "AUS",
           "rating": 820
+        },
+        {
+          "rank": 8,
+          "name": "K Rabada",
+          "team": "SA",
+          "rating": 807
+        },
+        {
+          "rank": 9,
+          "name": "JR Hazlewood",
+          "team": "AUS",
+          "rating": 775
+        },
+        {
+          "rank": 10,
+          "name": "NM Lyon",
+          "team": "AUS",
+          "rating": 753
         }
       ]
     },
@@ -840,53 +912,125 @@
       "batting": [
         {
           "rank": 1,
-          "name": "Babar Azam",
-          "team": "PAK",
-          "rating": 824
+          "name": "DJ Mitchell",
+          "team": "NZ",
+          "rating": 845
         },
         {
           "rank": 2,
-          "name": "Shubman Gill",
+          "name": "V Kohli",
           "team": "IND",
-          "rating": 812
+          "rating": 795
         },
         {
           "rank": 3,
-          "name": "Virat Kohli",
-          "team": "IND",
-          "rating": 788
+          "name": "Ibrahim Zadran",
+          "team": "AFG",
+          "rating": 764
         },
         {
           "rank": 4,
-          "name": "Travis Head",
-          "team": "AUS",
-          "rating": 775
+          "name": "RG Sharma",
+          "team": "IND",
+          "rating": 757
         },
         {
           "rank": 5,
-          "name": "Rohit Sharma",
+          "name": "Shubman Gill",
           "team": "IND",
-          "rating": 762
+          "rating": 723
+        },
+        {
+          "rank": 6,
+          "name": "Babar Azam",
+          "team": "PAK",
+          "rating": 722
+        },
+        {
+          "rank": 7,
+          "name": "HT Tector",
+          "team": "IRE",
+          "rating": 708
+        },
+        {
+          "rank": 8,
+          "name": "SD Hope",
+          "team": "WI",
+          "rating": 701
+        },
+        {
+          "rank": 9,
+          "name": "KIC Asalanka",
+          "team": "SL",
+          "rating": 672
+        },
+        {
+          "rank": 10,
+          "name": "KL Rahul",
+          "team": "IND",
+          "rating": 670
         }
       ],
       "bowling": [
         {
           "rank": 1,
-          "name": "Keshav Maharaj",
-          "team": "SA",
-          "rating": 741
+          "name": "Rashid Khan",
+          "team": "AFG",
+          "rating": 710
         },
         {
           "rank": 2,
-          "name": "Josh Hazlewood",
-          "team": "AUS",
-          "rating": 703
+          "name": "JC Archer",
+          "team": "ENG",
+          "rating": 650
         },
         {
           "rank": 3,
-          "name": "Adam Zampa",
+          "name": "KA Maharaj",
+          "team": "SA",
+          "rating": 646
+        },
+        {
+          "rank": 4,
+          "name": "BM Scholtz",
+          "team": "NAM",
+          "rating": 645
+        },
+        {
+          "rank": 5,
+          "name": "AU Rashid",
+          "team": "ENG",
+          "rating": 632
+        },
+        {
+          "rank": 6,
+          "name": "M Theekshana",
+          "team": "SL",
+          "rating": 628
+        },
+        {
+          "rank": 6,
+          "name": "JR Hazlewood",
           "team": "AUS",
-          "rating": 685
+          "rating": 628
+        },
+        {
+          "rank": 8,
+          "name": "Kuldeep Yadav",
+          "team": "IND",
+          "rating": 625
+        },
+        {
+          "rank": 9,
+          "name": "Abrar Ahmed",
+          "team": "PAK",
+          "rating": 624
+        },
+        {
+          "rank": 10,
+          "name": "MJ Santner",
+          "team": "NZ",
+          "rating": 617
         }
       ]
     },
@@ -894,53 +1038,125 @@
       "batting": [
         {
           "rank": 1,
-          "name": "Suryakumar Yadav",
+          "name": "Abhishek Sharma",
           "team": "IND",
-          "rating": 861
+          "rating": 874
         },
         {
           "rank": 2,
-          "name": "Phil Salt",
-          "team": "ENG",
-          "rating": 802
+          "name": "Sahibzada Farhan",
+          "team": "PAK",
+          "rating": 848
         },
         {
           "rank": 3,
-          "name": "Travis Head",
-          "team": "AUS",
-          "rating": 795
+          "name": "PD Salt",
+          "team": "ENG",
+          "rating": 803
         },
         {
           "rank": 4,
-          "name": "Babar Azam",
-          "team": "PAK",
-          "rating": 765
+          "name": "Ishan Kishan",
+          "team": "IND",
+          "rating": 783
         },
         {
           "rank": 5,
-          "name": "Mohammad Rizwan",
-          "team": "PAK",
-          "rating": 748
+          "name": "P Nissanka",
+          "team": "SL",
+          "rating": 766
+        },
+        {
+          "rank": 6,
+          "name": "NT Tilak Varma",
+          "team": "IND",
+          "rating": 749
+        },
+        {
+          "rank": 7,
+          "name": "SA Yadav",
+          "team": "IND",
+          "rating": 739
+        },
+        {
+          "rank": 8,
+          "name": "D Brevis",
+          "team": "SA",
+          "rating": 737
+        },
+        {
+          "rank": 9,
+          "name": "JC Buttler",
+          "team": "ENG",
+          "rating": 716
+        },
+        {
+          "rank": 10,
+          "name": "TL Seifert",
+          "team": "NZ",
+          "rating": 712
         }
       ],
       "bowling": [
         {
           "rank": 1,
-          "name": "Adil Rashid",
-          "team": "ENG",
-          "rating": 726
+          "name": "CV Varun",
+          "team": "IND",
+          "rating": 771
         },
         {
           "rank": 2,
-          "name": "Wanindu Hasaranga",
-          "team": "SL",
-          "rating": 695
+          "name": "Rashid Khan",
+          "team": "AFG",
+          "rating": 753
         },
         {
           "rank": 3,
-          "name": "Ravi Bishnoi",
-          "team": "IND",
+          "name": "Abrar Ahmed",
+          "team": "PAK",
+          "rating": 736
+        },
+        {
+          "rank": 4,
+          "name": "C Bosch",
+          "team": "SA",
+          "rating": 730
+        },
+        {
+          "rank": 5,
+          "name": "AU Rashid",
+          "team": "ENG",
+          "rating": 719
+        },
+        {
+          "rank": 6,
+          "name": "A Zampa",
+          "team": "AUS",
           "rating": 682
+        },
+        {
+          "rank": 7,
+          "name": "JJ Bumrah",
+          "team": "IND",
+          "rating": 671
+        },
+        {
+          "rank": 8,
+          "name": "MW Forde",
+          "team": "WI",
+          "rating": 667
+        },
+        {
+          "rank": 9,
+          "name": "Mustafizur Rahman",
+          "team": "BAN",
+          "rating": 665
+        },
+        {
+          "rank": 10,
+          "name": "Mujeeb Ur Rahman",
+          "team": "AFG",
+          "rating": 663
         }
       ]
     }

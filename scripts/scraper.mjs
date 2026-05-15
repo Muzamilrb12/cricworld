@@ -40,20 +40,53 @@ export async function scrapeLiveScores() {
 
         if (teamNames.length < 2) return null;
 
-        const processedTeams = teamNames.slice(0, 2).map((name, i) => {
-          return { 
-            name, 
-            shortName: name.substring(0, 3).toUpperCase(), 
-            score: scores[i] || 'Yet to bat', 
-            overs: '0',
-            isBatting: false 
-          };
-        });
+        const processedTeams = [];
+        const teamRows = Array.from(card.querySelectorAll('.ci-team-score'));
+        
+        if (teamRows.length >= 2) {
+            teamRows.forEach(row => {
+                const nameEl = row.querySelector('.ds-text-tight-m, .ds-text-tight-l');
+                let name = nameEl ? nameEl.textContent.trim() : 'Unknown';
+                
+                const scoreBlock = row.querySelector('.ds-text-compact-m, .ds-text-compact-s');
+                let scoreText = scoreBlock ? scoreBlock.textContent.trim() : '';
+
+                // Sometimes the overs are in a separate span within the row, let's just grab all text
+                // from the right side of the row if possible
+                if (!scoreText) {
+                    const allText = row.textContent.trim();
+                    scoreText = allText.replace(name, '').trim() || 'Yet to bat';
+                }
+
+                processedTeams.push({
+                    name,
+                    shortName: name.length > 3 ? name.substring(0, 3).toUpperCase() : name.toUpperCase(),
+                    score: scoreText,
+                    overs: '0', // Overs will be parsed by the API route from the scoreText
+                    isBatting: false
+                });
+            });
+        } else {
+            // Fallback to old method if .ci-team-score is missing
+            teamNames.slice(0, 2).forEach((name, i) => {
+                processedTeams.push({ 
+                    name, 
+                    shortName: name.substring(0, 3).toUpperCase(), 
+                    score: scores[i] || 'Yet to bat', 
+                    overs: '0',
+                    isBatting: false 
+                });
+            });
+        }
+
+        const format = (title.toLowerCase().includes('t20') || title.toLowerCase().includes('ipl')) ? 'T20' : 
+                       title.toLowerCase().includes('odi') ? 'ODI' : 
+                       (title.toLowerCase().includes('test') || title.toLowerCase().includes('county')) ? 'Test' : 'T20';
 
         return {
           id: `live-${index}`,
           title,
-          format: title.includes('T20') ? 'T20' : title.includes('ODI') ? 'ODI' : 'Test',
+          format,
           venue: 'Live Match',
           status: 'Live',
           teams: processedTeams,
@@ -218,6 +251,50 @@ export async function scrapeRankings() {
             }));
         }
     });
+
+    console.log('🌐 Navigating to ICC Player Rankings...');
+    await page.goto('https://www.espncricinfo.com/rankings/icc-player-ranking', { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await new Promise(r => setTimeout(r, 5000));
+
+    const playerRankingsData = await page.evaluate(() => {
+      const tables = Array.from(document.querySelectorAll('table'));
+      return tables.map(t => {
+        const rows = Array.from(t.querySelectorAll('tbody tr')).slice(0, 10).map(tr => {
+          const cells = Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim());
+          return cells;
+        });
+        return rows;
+      });
+    });
+
+    console.log(`✅ Scraped ${playerRankingsData.length} player ranking tables.`);
+
+    if (playerRankingsData.length >= 9) {
+      const mapPlayers = (tableData) => {
+        if (!tableData) return [];
+        return tableData.map(row => ({
+          rank: parseInt(row[0]) || 0,
+          name: row[1],
+          team: row[2],
+          rating: parseInt(row[3]) || 0
+        })).filter(p => p.name);
+      };
+
+      existingData.players = {
+        test: {
+          batting: mapPlayers(playerRankingsData[0]),
+          bowling: mapPlayers(playerRankingsData[1])
+        },
+        odi: {
+          batting: mapPlayers(playerRankingsData[3]),
+          bowling: mapPlayers(playerRankingsData[4])
+        },
+        t20i: {
+          batting: mapPlayers(playerRankingsData[6]),
+          bowling: mapPlayers(playerRankingsData[7])
+        }
+      };
+    }
 
     await fs.writeFile(dbPath, JSON.stringify(existingData, null, 2));
 
