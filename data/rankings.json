@@ -1,69 +1,947 @@
 {
   "teams": {
     "test": [
-      { "rank": 1, "team": "Australia", "rating": 124, "points": 3450 },
-      { "rank": 2, "team": "India", "rating": 120, "points": 3820 },
-      { "rank": 3, "team": "South Africa", "rating": 115, "points": 2185 },
-      { "rank": 4, "team": "England", "rating": 110, "points": 4020 },
-      { "rank": 5, "team": "New Zealand", "rating": 102, "points": 2450 },
-      { "rank": 6, "team": "Pakistan", "rating": 98, "points": 1850 }
+      {
+        "rank": 1,
+        "team": "Australia",
+        "rating": 131,
+        "points": 3138
+      },
+      {
+        "rank": 2,
+        "team": "South Africa",
+        "rating": 119,
+        "points": 2256
+      },
+      {
+        "rank": 3,
+        "team": "India",
+        "rating": 104,
+        "points": 2600
+      },
+      {
+        "rank": 4,
+        "team": "England",
+        "rating": 102,
+        "points": 2850
+      },
+      {
+        "rank": 5,
+        "team": "New Zealand",
+        "rating": 101,
+        "points": 1717
+      },
+      {
+        "rank": 6,
+        "team": "Pakistan",
+        "rating": 89,
+        "points": 1154
+      },
+      {
+        "rank": 7,
+        "team": "Sri Lanka",
+        "rating": 86,
+        "points": 1118
+      },
+      {
+        "rank": 8,
+        "team": "West Indies",
+        "rating": 68,
+        "points": 1425
+      },
+      {
+        "rank": 9,
+        "team": "Bangladesh",
+        "rating": 67,
+        "points": 1134
+      },
+      {
+        "rank": 10,
+        "team": "Zimbabwe",
+        "rating": 10,
+        "points": 117
+      }
     ],
     "odi": [
-      { "rank": 1, "team": "India", "rating": 121, "points": 4820 },
-      { "rank": 2, "team": "Australia", "rating": 118, "points": 4150 },
-      { "rank": 3, "team": "Pakistan", "rating": 108, "points": 2850 },
-      { "rank": 4, "team": "South Africa", "rating": 110, "points": 3180 },
-      { "rank": 5, "team": "New Zealand", "rating": 101, "points": 2450 }
+      {
+        "rank": 1,
+        "team": "India",
+        "rating": 118,
+        "points": 3197
+      },
+      {
+        "rank": 2,
+        "team": "New Zealand",
+        "rating": 113,
+        "points": 3384
+      },
+      {
+        "rank": 3,
+        "team": "Australia",
+        "rating": 109,
+        "points": 2510
+      },
+      {
+        "rank": 4,
+        "team": "South Africa",
+        "rating": 102,
+        "points": 2855
+      },
+      {
+        "rank": 5,
+        "team": "Pakistan",
+        "rating": 98,
+        "points": 2841
+      },
+      {
+        "rank": 6,
+        "team": "Sri Lanka",
+        "rating": 96,
+        "points": 3346
+      },
+      {
+        "rank": 7,
+        "team": "Afghanistan",
+        "rating": 93,
+        "points": 1947
+      },
+      {
+        "rank": 8,
+        "team": "England",
+        "rating": 89,
+        "points": 2487
+      },
+      {
+        "rank": 9,
+        "team": "Bangladesh",
+        "rating": 84,
+        "points": 2763
+      },
+      {
+        "rank": 10,
+        "team": "West Indies",
+        "rating": 74,
+        "points": 2073
+      },
+      {
+        "rank": 11,
+        "team": "Ireland",
+        "rating": 54,
+        "points": 653
+      },
+      {
+        "rank": 12,
+        "team": "Zimbabwe",
+        "rating": 53,
+        "points": 637
+      },
+      {
+        "rank": 13,
+        "team": "Scotland",
+        "rating": 47,
+        "points": 1029
+      },
+      {
+        "rank": 14,
+        "team": "Netherlands",
+        "rating": 44,
+        "points": 1047
+      },
+      {
+        "rank": 15,
+        "team": "U.S.A.",
+        "rating": 43,
+        "points": 867
+      },
+      {
+        "rank": 16,
+        "team": "Oman",
+        "rating": 33,
+        "points": 716
+      },
+      {
+        "rank": 17,
+        "team": "Nepal",
+        "rating": 25,
+        "points": 577
+      },
+      {
+        "rank": 18,
+        "team": "Namibia",
+        "rating": 23,
+        "points": 373
+      },
+      {
+        "rank": 19,
+        "team": "U.A.E.",
+        "rating": 16,
+        "points": 357
+      },
+      {
+        "rank": 20,
+        "team": "Canada",
+        "rating": 10,
+        "points": 167
+      }
     ],
     "t20i": [
-      { "rank": 1, "team": "India", "rating": 267, "points": 12450 },
-      { "rank": 2, "team": "Australia", "rating": 259, "points": 10280 },
-      { "rank": 3, "team": "England", "rating": 255, "points": 9850 },
-      { "rank": 4, "team": "West Indies", "rating": 252, "points": 8450 },
-      { "rank": 5, "team": "Pakistan", "rating": 250, "points": 9120 }
+      {
+        "rank": 1,
+        "team": "India",
+        "rating": 275,
+        "points": 14306
+      },
+      {
+        "rank": 2,
+        "team": "England",
+        "rating": 262,
+        "points": 8904
+      },
+      {
+        "rank": 3,
+        "team": "Australia",
+        "rating": 258,
+        "points": 9044
+      },
+      {
+        "rank": 4,
+        "team": "New Zealand",
+        "rating": 247,
+        "points": 12348
+      },
+      {
+        "rank": 5,
+        "team": "South Africa",
+        "rating": 244,
+        "points": 11717
+      },
+      {
+        "rank": 6,
+        "team": "Pakistan",
+        "rating": 240,
+        "points": 13679
+      },
+      {
+        "rank": 7,
+        "team": "West Indies",
+        "rating": 233,
+        "points": 12367
+      },
+      {
+        "rank": 8,
+        "team": "Bangladesh",
+        "rating": 225,
+        "points": 10576
+      },
+      {
+        "rank": 9,
+        "team": "Sri Lanka",
+        "rating": 221,
+        "points": 9053
+      },
+      {
+        "rank": 10,
+        "team": "Afghanistan",
+        "rating": 220,
+        "points": 7935
+      },
+      {
+        "rank": 11,
+        "team": "Zimbabwe",
+        "rating": 202,
+        "points": 9679
+      },
+      {
+        "rank": 12,
+        "team": "Ireland",
+        "rating": 199,
+        "points": 5361
+      },
+      {
+        "rank": 13,
+        "team": "U.S.A.",
+        "rating": 183,
+        "points": 3650
+      },
+      {
+        "rank": 14,
+        "team": "Netherlands",
+        "rating": 180,
+        "points": 4311
+      },
+      {
+        "rank": 15,
+        "team": "Scotland",
+        "rating": 179,
+        "points": 4116
+      },
+      {
+        "rank": 16,
+        "team": "Namibia",
+        "rating": 178,
+        "points": 5863
+      },
+      {
+        "rank": 17,
+        "team": "Nepal",
+        "rating": 178,
+        "points": 6928
+      },
+      {
+        "rank": 18,
+        "team": "U.A.E.",
+        "rating": 174,
+        "points": 9408
+      },
+      {
+        "rank": 19,
+        "team": "Oman",
+        "rating": 158,
+        "points": 6003
+      },
+      {
+        "rank": 20,
+        "team": "Canada",
+        "rating": 149,
+        "points": 3864
+      },
+      {
+        "rank": 21,
+        "team": "Uganda",
+        "rating": 144,
+        "points": 5478
+      },
+      {
+        "rank": 22,
+        "team": "P.N.G.",
+        "rating": 141,
+        "points": 2540
+      },
+      {
+        "rank": 23,
+        "team": "Italy",
+        "rating": 133,
+        "points": 1988
+      },
+      {
+        "rank": 24,
+        "team": "Malaysia",
+        "rating": 126,
+        "points": 5526
+      },
+      {
+        "rank": 25,
+        "team": "Hong Kong",
+        "rating": 125,
+        "points": 4888
+      },
+      {
+        "rank": 26,
+        "team": "Spain",
+        "rating": 125,
+        "points": 1377
+      },
+      {
+        "rank": 27,
+        "team": "Kuwait",
+        "rating": 124,
+        "points": 3585
+      },
+      {
+        "rank": 28,
+        "team": "Qatar",
+        "rating": 119,
+        "points": 4297
+      },
+      {
+        "rank": 29,
+        "team": "Bahrain",
+        "rating": 119,
+        "points": 7120
+      },
+      {
+        "rank": 30,
+        "team": "Jersey",
+        "rating": 115,
+        "points": 1845
+      },
+      {
+        "rank": 31,
+        "team": "Bermuda",
+        "rating": 113,
+        "points": 1924
+      },
+      {
+        "rank": 32,
+        "team": "Saudi Arabia",
+        "rating": 109,
+        "points": 2825
+      },
+      {
+        "rank": 33,
+        "team": "Kenya",
+        "rating": 104,
+        "points": 3443
+      },
+      {
+        "rank": 34,
+        "team": "Tanzania",
+        "rating": 99,
+        "points": 2967
+      },
+      {
+        "rank": 35,
+        "team": "Germany",
+        "rating": 87,
+        "points": 1661
+      },
+      {
+        "rank": 36,
+        "team": "Guernsey",
+        "rating": 81,
+        "points": 1453
+      },
+      {
+        "rank": 37,
+        "team": "Cayman",
+        "rating": 80,
+        "points": 1915
+      },
+      {
+        "rank": 38,
+        "team": "Nigeria",
+        "rating": 78,
+        "points": 3128
+      },
+      {
+        "rank": 39,
+        "team": "Portugal",
+        "rating": 76,
+        "points": 1374
+      },
+      {
+        "rank": 40,
+        "team": "Japan",
+        "rating": 71,
+        "points": 2484
+      },
+      {
+        "rank": 41,
+        "team": "Singapore",
+        "rating": 70,
+        "points": 1686
+      },
+      {
+        "rank": 42,
+        "team": "Austria",
+        "rating": 70,
+        "points": 3371
+      },
+      {
+        "rank": 43,
+        "team": "Denmark",
+        "rating": 69,
+        "points": 754
+      },
+      {
+        "rank": 44,
+        "team": "Norway",
+        "rating": 61,
+        "points": 1641
+      },
+      {
+        "rank": 45,
+        "team": "Sweden",
+        "rating": 59,
+        "points": 1422
+      },
+      {
+        "rank": 46,
+        "team": "Argentina",
+        "rating": 54,
+        "points": 758
+      },
+      {
+        "rank": 47,
+        "team": "Finland",
+        "rating": 53,
+        "points": 962
+      },
+      {
+        "rank": 48,
+        "team": "Switzerland",
+        "rating": 53,
+        "points": 908
+      },
+      {
+        "rank": 49,
+        "team": "Belgium",
+        "rating": 52,
+        "points": 1257
+      },
+      {
+        "rank": 50,
+        "team": "Botswana",
+        "rating": 48,
+        "points": 1249
+      },
+      {
+        "rank": 51,
+        "team": "Cook Islands",
+        "rating": 48,
+        "points": 570
+      },
+      {
+        "rank": 52,
+        "team": "Romania",
+        "rating": 47,
+        "points": 1314
+      },
+      {
+        "rank": 53,
+        "team": "Malawi",
+        "rating": 46,
+        "points": 1667
+      },
+      {
+        "rank": 54,
+        "team": "France",
+        "rating": 45,
+        "points": 1072
+      },
+      {
+        "rank": 55,
+        "team": "Philippines",
+        "rating": 44,
+        "points": 1178
+      },
+      {
+        "rank": 56,
+        "team": "Samoa",
+        "rating": 43,
+        "points": 811
+      },
+      {
+        "rank": 57,
+        "team": "Cyprus",
+        "rating": 42,
+        "points": 915
+      },
+      {
+        "rank": 58,
+        "team": "Ghana",
+        "rating": 40,
+        "points": 605
+      },
+      {
+        "rank": 59,
+        "team": "Thailand",
+        "rating": 40,
+        "points": 1287
+      },
+      {
+        "rank": 60,
+        "team": "Rwanda",
+        "rating": 40,
+        "points": 2045
+      },
+      {
+        "rank": 61,
+        "team": "Bahamas",
+        "rating": 40,
+        "points": 599
+      },
+      {
+        "rank": 62,
+        "team": "Cambodia",
+        "rating": 38,
+        "points": 1109
+      },
+      {
+        "rank": 63,
+        "team": "Indonesia",
+        "rating": 38,
+        "points": 2899
+      },
+      {
+        "rank": 64,
+        "team": "Isle of Man",
+        "rating": 37,
+        "points": 258
+      },
+      {
+        "rank": 65,
+        "team": "Czech Rep.",
+        "rating": 37,
+        "points": 438
+      },
+      {
+        "rank": 66,
+        "team": "Eswatini",
+        "rating": 34,
+        "points": 514
+      },
+      {
+        "rank": 67,
+        "team": "Malta",
+        "rating": 33,
+        "points": 1126
+      },
+      {
+        "rank": 68,
+        "team": "Hungary",
+        "rating": 30,
+        "points": 700
+      },
+      {
+        "rank": 69,
+        "team": "Vanuatu",
+        "rating": 29,
+        "points": 380
+      },
+      {
+        "rank": 70,
+        "team": "Zambia",
+        "rating": 29,
+        "points": 290
+      },
+      {
+        "rank": 71,
+        "team": "Estonia",
+        "rating": 26,
+        "points": 409
+      },
+      {
+        "rank": 72,
+        "team": "Mexico",
+        "rating": 21,
+        "points": 454
+      },
+      {
+        "rank": 73,
+        "team": "Belize",
+        "rating": 21,
+        "points": 82
+      },
+      {
+        "rank": 74,
+        "team": "Bhutan",
+        "rating": 20,
+        "points": 519
+      },
+      {
+        "rank": 75,
+        "team": "Panama",
+        "rating": 20,
+        "points": 156
+      },
+      {
+        "rank": 76,
+        "team": "Gibraltar",
+        "rating": 17,
+        "points": 347
+      },
+      {
+        "rank": 77,
+        "team": "Luxembourg",
+        "rating": 16,
+        "points": 255
+      },
+      {
+        "rank": 78,
+        "team": "Serbia",
+        "rating": 14,
+        "points": 275
+      },
+      {
+        "rank": 79,
+        "team": "Cameroon",
+        "rating": 12,
+        "points": 49
+      },
+      {
+        "rank": 80,
+        "team": "Sierra Leone",
+        "rating": 12,
+        "points": 246
+      },
+      {
+        "rank": 81,
+        "team": "Brazil",
+        "rating": 12,
+        "points": 152
+      },
+      {
+        "rank": 82,
+        "team": "South Korea",
+        "rating": 9,
+        "points": 141
+      },
+      {
+        "rank": 83,
+        "team": "Fiji",
+        "rating": 9,
+        "points": 63
+      },
+      {
+        "rank": 84,
+        "team": "Maldives",
+        "rating": 9,
+        "points": 112
+      },
+      {
+        "rank": 85,
+        "team": "Bulgaria",
+        "rating": 8,
+        "points": 165
+      },
+      {
+        "rank": 86,
+        "team": "Suriname",
+        "rating": 8,
+        "points": 82
+      },
+      {
+        "rank": 87,
+        "team": "Seychelles",
+        "rating": 7,
+        "points": 46
+      },
+      {
+        "rank": 88,
+        "team": "Mozambique",
+        "rating": 7,
+        "points": 65
+      },
+      {
+        "rank": 89,
+        "team": "China",
+        "rating": 5,
+        "points": 29
+      },
+      {
+        "rank": 90,
+        "team": "Turkey",
+        "rating": 4,
+        "points": 28
+      },
+      {
+        "rank": 91,
+        "team": "Timor-Leste",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 92,
+        "team": "Mongolia",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 93,
+        "team": "St Helena",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 94,
+        "team": "Slovenia",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 95,
+        "team": "Myanmar",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 96,
+        "team": "Mali",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 97,
+        "team": "Lesotho",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 98,
+        "team": "Croatia",
+        "rating": 0,
+        "points": 0
+      },
+      {
+        "rank": 99,
+        "team": "Costa Rica",
+        "rating": 0,
+        "points": 0
+      }
     ]
   },
   "players": {
     "test": {
       "batting": [
-        { "rank": 1, "name": "Joe Root", "team": "ENG", "rating": 899 },
-        { "rank": 2, "name": "Kane Williamson", "team": "NZ", "rating": 876 },
-        { "rank": 3, "name": "Yashasvi Jaiswal", "team": "IND", "rating": 855 },
-        { "rank": 4, "name": "Babar Azam", "team": "PAK", "rating": 845 },
-        { "rank": 5, "name": "Steve Smith", "team": "AUS", "rating": 812 }
+        {
+          "rank": 1,
+          "name": "Joe Root",
+          "team": "ENG",
+          "rating": 899
+        },
+        {
+          "rank": 2,
+          "name": "Kane Williamson",
+          "team": "NZ",
+          "rating": 876
+        },
+        {
+          "rank": 3,
+          "name": "Yashasvi Jaiswal",
+          "team": "IND",
+          "rating": 855
+        },
+        {
+          "rank": 4,
+          "name": "Babar Azam",
+          "team": "PAK",
+          "rating": 845
+        },
+        {
+          "rank": 5,
+          "name": "Steve Smith",
+          "team": "AUS",
+          "rating": 812
+        }
       ],
       "bowling": [
-        { "rank": 1, "name": "Jasprit Bumrah", "team": "IND", "rating": 875 },
-        { "rank": 2, "name": "Ravichandran Ashwin", "team": "IND", "rating": 842 },
-        { "rank": 3, "name": "Pat Cummins", "team": "AUS", "rating": 820 }
+        {
+          "rank": 1,
+          "name": "Jasprit Bumrah",
+          "team": "IND",
+          "rating": 875
+        },
+        {
+          "rank": 2,
+          "name": "Ravichandran Ashwin",
+          "team": "IND",
+          "rating": 842
+        },
+        {
+          "rank": 3,
+          "name": "Pat Cummins",
+          "team": "AUS",
+          "rating": 820
+        }
       ]
     },
     "odi": {
       "batting": [
-        { "rank": 1, "name": "Babar Azam", "team": "PAK", "rating": 824 },
-        { "rank": 2, "name": "Shubman Gill", "team": "IND", "rating": 812 },
-        { "rank": 3, "name": "Virat Kohli", "team": "IND", "rating": 788 },
-        { "rank": 4, "name": "Travis Head", "team": "AUS", "rating": 775 },
-        { "rank": 5, "name": "Rohit Sharma", "team": "IND", "rating": 762 }
+        {
+          "rank": 1,
+          "name": "Babar Azam",
+          "team": "PAK",
+          "rating": 824
+        },
+        {
+          "rank": 2,
+          "name": "Shubman Gill",
+          "team": "IND",
+          "rating": 812
+        },
+        {
+          "rank": 3,
+          "name": "Virat Kohli",
+          "team": "IND",
+          "rating": 788
+        },
+        {
+          "rank": 4,
+          "name": "Travis Head",
+          "team": "AUS",
+          "rating": 775
+        },
+        {
+          "rank": 5,
+          "name": "Rohit Sharma",
+          "team": "IND",
+          "rating": 762
+        }
       ],
       "bowling": [
-        { "rank": 1, "name": "Keshav Maharaj", "team": "SA", "rating": 741 },
-        { "rank": 2, "name": "Josh Hazlewood", "team": "AUS", "rating": 703 },
-        { "rank": 3, "name": "Adam Zampa", "team": "AUS", "rating": 685 }
+        {
+          "rank": 1,
+          "name": "Keshav Maharaj",
+          "team": "SA",
+          "rating": 741
+        },
+        {
+          "rank": 2,
+          "name": "Josh Hazlewood",
+          "team": "AUS",
+          "rating": 703
+        },
+        {
+          "rank": 3,
+          "name": "Adam Zampa",
+          "team": "AUS",
+          "rating": 685
+        }
       ]
     },
     "t20i": {
       "batting": [
-        { "rank": 1, "name": "Suryakumar Yadav", "team": "IND", "rating": 861 },
-        { "rank": 2, "name": "Phil Salt", "team": "ENG", "rating": 802 },
-        { "rank": 3, "name": "Travis Head", "team": "AUS", "rating": 795 },
-        { "rank": 4, "name": "Babar Azam", "team": "PAK", "rating": 765 },
-        { "rank": 5, "name": "Mohammad Rizwan", "team": "PAK", "rating": 748 }
+        {
+          "rank": 1,
+          "name": "Suryakumar Yadav",
+          "team": "IND",
+          "rating": 861
+        },
+        {
+          "rank": 2,
+          "name": "Phil Salt",
+          "team": "ENG",
+          "rating": 802
+        },
+        {
+          "rank": 3,
+          "name": "Travis Head",
+          "team": "AUS",
+          "rating": 795
+        },
+        {
+          "rank": 4,
+          "name": "Babar Azam",
+          "team": "PAK",
+          "rating": 765
+        },
+        {
+          "rank": 5,
+          "name": "Mohammad Rizwan",
+          "team": "PAK",
+          "rating": 748
+        }
       ],
       "bowling": [
-        { "rank": 1, "name": "Adil Rashid", "team": "ENG", "rating": 726 },
-        { "rank": 2, "name": "Wanindu Hasaranga", "team": "SL", "rating": 695 },
-        { "rank": 3, "name": "Ravi Bishnoi", "team": "IND", "rating": 682 }
+        {
+          "rank": 1,
+          "name": "Adil Rashid",
+          "team": "ENG",
+          "rating": 726
+        },
+        {
+          "rank": 2,
+          "name": "Wanindu Hasaranga",
+          "team": "SL",
+          "rating": 695
+        },
+        {
+          "rank": 3,
+          "name": "Ravi Bishnoi",
+          "team": "IND",
+          "rating": 682
+        }
       ]
     }
   }

@@ -1,4 +1,4 @@
-import { scrapeLiveScores, scrapeSchedule } from './scraper.mjs';
+import { scrapeLiveScores, scrapeSchedule, scrapeRankings } from './scraper.mjs';
 
 const LIVE_SCORE_INTERVAL_MS = 60 * 1000; // 60 seconds
 const SCHEDULE_INTERVAL_MS = 24 * 60 * 60 * 1000; // 24 hours
@@ -11,6 +11,7 @@ console.log(`📅 Schedule Update Interval: Every ${SCHEDULE_INTERVAL_MS / 1000 
 async function init() {
     console.log('🚀 Running initial scrapes...');
     await scrapeSchedule();
+    await scrapeRankings();
     await scrapeLiveScores();
     
     // Start Cron Jobs (Timers)
@@ -27,6 +28,7 @@ async function init() {
         console.log(`[${new Date().toISOString()}] 🔄 Running Schedule Cron Job...`);
         try {
             await scrapeSchedule();
+            await scrapeRankings();
         } catch (err) {
             console.error('❌ Schedule Cron Failed:', err);
         }

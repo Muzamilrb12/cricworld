@@ -157,10 +157,81 @@ export async function scrapeSchedule() {
   }
 }
 
+export async function scrapeRankings() {
+  const browser = await getBrowser();
+  const page = await browser.newPage();
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36');
+  try {
+    console.log('🌐 Navigating to ICC Rankings...');
+    await page.goto('https://www.espncricinfo.com/rankings/icc-team-ranking', { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await new Promise(r => setTimeout(r, 5000));
+
+    const rankings = await page.evaluate(() => {
+      const tables = Array.from(document.querySelectorAll('table'));
+      let allRankings = [];
+      
+      tables.forEach((table, index) => {
+        const rows = Array.from(table.querySelectorAll('tbody tr'));
+        const format = index === 0 ? 'Test' : index === 1 ? 'ODI' : index === 2 ? 'T20I' : 'Women';
+        
+        const teamRankings = rows.map(row => {
+          const cells = Array.from(row.querySelectorAll('td'));
+          if (cells.length < 5) return null;
+          return {
+            position: cells[0].textContent.trim(),
+            team: cells[1].textContent.trim(),
+            matches: cells[2].textContent.trim(),
+            points: cells[3].textContent.trim(),
+            rating: cells[4].textContent.trim()
+          };
+        }).filter(Boolean);
+
+        if (teamRankings.length > 0) {
+          allRankings.push({ format, rankings: teamRankings });
+        }
+      });
+      return allRankings;
+    });
+
+    console.log(`✅ Scraped ${rankings.length} ranking tables.`);
+    const dataDir = path.join(process.cwd(), 'data');
+    const dbPath = path.join(dataDir, 'rankings.json');
+    
+    // Read existing to preserve players data
+    let existingData = { teams: { test: [], odi: [], t20i: [] }, players: {} };
+    try {
+       const fileContent = await fs.readFile(dbPath, 'utf8');
+       existingData = JSON.parse(fileContent);
+    } catch (e) {
+       // File doesn't exist or is invalid, use default structure
+    }
+
+    // Map scraped data to correct format
+    rankings.forEach(r => {
+        const key = r.format.toLowerCase();
+        if (existingData.teams[key]) {
+            existingData.teams[key] = r.rankings.map(t => ({
+                rank: parseInt(t.position) || 0,
+                team: t.team,
+                rating: parseInt(t.rating) || 0,
+                points: parseInt(t.points.replace(/,/g, '')) || 0
+            }));
+        }
+    });
+
+    await fs.writeFile(dbPath, JSON.stringify(existingData, null, 2));
+
+  } catch (error) {
+    console.error('❌ Rankings Scraper Error:', error);
+  } finally {
+    await page.close();
+  }
+}
+
 export async function scrapeAllOnce() {
     await scrapeLiveScores();
     await scrapeSchedule();
-    // You can add scrapeRankings and scrapeIplPointsTable here if needed
+    await scrapeRankings();
     if (browserInstance) {
         await browserInstance.close();
         browserInstance = null;
