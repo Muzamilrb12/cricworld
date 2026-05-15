@@ -1,11 +1,44 @@
 'use client';
-import { useState } from 'react';
-import rankingsData from "../../../data/rankings.json";
+import { useState, useEffect } from 'react';
 import Link from "next/link";
 
 export default function RankingsPage() {
   const [activeFormat, setActiveFormat] = useState<'test' | 'odi' | 't20i'>('odi');
-  const rankings = rankingsData as any;
+  const [rankings, setRankings] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchRankings() {
+      try {
+        const res = await fetch('/api/rankings');
+        const data = await res.json();
+        setRankings(data);
+      } catch (error) {
+        console.error('Error fetching rankings:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchRankings();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 flex justify-center items-center h-[50vh]">
+        <div className="text-2xl font-black italic uppercase tracking-tighter text-accent animate-pulse">
+          Loading Rankings...
+        </div>
+      </div>
+    );
+  }
+
+  if (!rankings) {
+    return (
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1 className="text-2xl font-black italic uppercase text-red-500">Failed to load rankings</h1>
+      </div>
+    );
+  }
 
   const formats = [
     { id: 'test', label: 'Test Rankings' },

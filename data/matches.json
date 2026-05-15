@@ -55,15 +55,15 @@
     "status": "Live",
     "teams": [
       {
-        "name": "Essex",
-        "shortName": "ESS",
+        "name": "Leics",
+        "shortName": "LEI",
         "score": "Yet to bat",
         "overs": "0",
         "isBatting": false
       },
       {
-        "name": "Leics",
-        "shortName": "LEI",
+        "name": "Essex",
+        "shortName": "ESS",
         "score": "Yet to bat",
         "overs": "0",
         "isBatting": false
@@ -175,15 +175,15 @@
     "status": "Live",
     "teams": [
       {
-        "name": "BLZ Women",
-        "shortName": "BLZ",
-        "score": "Yet to bat",
+        "name": "HAM-W",
+        "shortName": "HAM",
+        "score": "(6.4/50 ov) 21/2",
         "overs": "0",
         "isBatting": false
       },
       {
-        "name": "HAM Women",
-        "shortName": "HAM",
+        "name": "BLZ-W",
+        "shortName": "BLZ",
         "score": "Yet to bat",
         "overs": "0",
         "isBatting": false
