@@ -14,7 +14,6 @@ export async function GET() {
     const res = await fetch(espnUrl);
     if (!res.ok) throw new Error(`ESPN responded ${res.status}`);
     const json = await res.json();
-    // The exact shape may vary; we attempt to normalise to a simple array.
     const points = (json?.standings?.entries || []).map((e: any) => ({
       team_id: e.team?.id,
       team_name: e.team?.displayName,
@@ -27,18 +26,42 @@ export async function GET() {
     return NextResponse.json({
       status: 'ok',
       data: points,
-      source: { name: 'ESPN Cricinfo', url: espnUrl },
+      source: { name: 'ESPN API', url: espnUrl },
       fetched_at: now,
     }, { headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30' } });
   } catch (err: any) {
-    console.error('[IPL Points] fetch error:', err.message);
-    return NextResponse.json({
-      status: 'data unavailable',
-      data: null,
-      retry_after: '30 seconds',
-      source: { name: 'ESPN Cricinfo', url: espnUrl },
-      fetched_at: now,
-      error: err.message,
-    }, { headers: { 'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=15' } });
+    console.warn('[IPL Points] API error, falling back to local data:', err.message);
+    
+    // Fallback to local scraped data
+    try {
+      const fs = require('fs/promises');
+      const path = require('path');
+      const ptPath = path.join(process.cwd(), 'data', 'points-table.json');
+      const localData = JSON.parse(await fs.readFile(ptPath, 'utf8'));
+      const iplPoints = localData.leagues['ipl-2026'] || [];
+      
+      return NextResponse.json({
+        status: 'ok',
+        data: iplPoints.map((p: any) => ({
+            team_id: p.team,
+            team_name: p.fullName,
+            team_image_url: '', // Scraper doesn't get logos yet
+            played: p.p,
+            points: p.pts,
+            nrr: p.nrr,
+        })),
+        source: { name: 'Local Scraper (ESPN Fallback)', url: 'https://www.espncricinfo.com/series/ipl-2026-1510719/points-table-standings' },
+        fetched_at: now,
+      });
+    } catch (localErr: any) {
+      return NextResponse.json({
+        status: 'data unavailable',
+        data: null,
+        retry_after: '30 seconds',
+        fetched_at: now,
+        error: localErr.message,
+      }, { headers: { 'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=15' } });
+    }
   }
 }
+

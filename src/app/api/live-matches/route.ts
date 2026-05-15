@@ -33,10 +33,32 @@ export async function GET() {
       lastFetchTime = Date.now();
       return NextResponse.json({ ...cachedData, cache_status: 'miss' });
     }
+
+    // FINAL FALLBACK: Local Scraped Data
+    console.log('[API] Discovery failed, falling back to local matches.json...');
+    try {
+      const fs = require('fs/promises');
+      const path = require('path');
+      const matchesPath = path.join(process.cwd(), 'data', 'matches.json');
+      const localMatches = JSON.parse(await fs.readFile(matchesPath, 'utf8'));
+      if (localMatches && localMatches.length > 0) {
+        cachedData = {
+          status: 'ok',
+          data: localMatches,
+          source: { name: 'Local Scraper (ESPN)', url: 'https://www.espncricinfo.com/live-cricket-score' },
+          fetched_at: new Date().toISOString()
+        };
+        lastFetchTime = Date.now();
+        return NextResponse.json({ ...cachedData, cache_status: 'miss' });
+      }
+    } catch (e) {
+      console.error('[API] Local fallback failed:', e);
+    }
   }
   
   cachedData = result;
   lastFetchTime = Date.now();
   return NextResponse.json({ ...result, cache_status: 'miss' });
 }
+
 

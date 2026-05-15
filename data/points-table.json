@@ -1,72 +1,288 @@
 {
-  "icc-rankings": {
-    "test": [
-      { "rank": 1, "team": "India", "rating": 126, "pts": 3780 },
-      { "rank": 2, "team": "Australia", "rating": 118, "pts": 3540 },
-      { "rank": 3, "team": "England", "rating": 112, "pts": 3360 },
-      { "rank": 4, "team": "South Africa", "rating": 106, "pts": 2120 },
-      { "rank": 5, "team": "New Zealand", "rating": 98, "pts": 2156 },
-      { "rank": 6, "team": "Sri Lanka", "rating": 92, "pts": 1840 },
-      { "rank": 7, "team": "Pakistan", "rating": 86, "pts": 1892 },
-      { "rank": 8, "team": "West Indies", "rating": 76, "pts": 1216 },
-      { "rank": 9, "team": "Bangladesh", "rating": 68, "pts": 1088 }
-    ],
-    "odi": [
-      { "rank": 1, "team": "India", "rating": 121, "pts": 5082 },
-      { "rank": 2, "team": "Australia", "rating": 116, "pts": 4176 },
-      { "rank": 3, "team": "South Africa", "rating": 112, "pts": 3248 },
-      { "rank": 4, "team": "England", "rating": 108, "pts": 3672 },
-      { "rank": 5, "team": "Pakistan", "rating": 102, "pts": 2652 },
-      { "rank": 6, "team": "New Zealand", "rating": 100, "pts": 2600 },
-      { "rank": 7, "team": "Bangladesh", "rating": 88, "pts": 1848 },
-      { "rank": 8, "team": "Sri Lanka", "rating": 82, "pts": 1640 },
-      { "rank": 9, "team": "Afghanistan", "rating": 78, "pts": 1326 }
-    ],
-    "t20i": [
-      { "rank": 1, "team": "India", "rating": 268, "pts": 14740 },
-      { "rank": 2, "team": "England", "rating": 261, "pts": 12789 },
-      { "rank": 3, "team": "Australia", "rating": 256, "pts": 11264 },
-      { "rank": 4, "team": "South Africa", "rating": 253, "pts": 8602 },
-      { "rank": 5, "team": "West Indies", "rating": 248, "pts": 8680 },
-      { "rank": 6, "team": "Pakistan", "rating": 244, "pts": 10980 },
-      { "rank": 7, "team": "New Zealand", "rating": 238, "pts": 6664 },
-      { "rank": 8, "team": "Sri Lanka", "rating": 232, "pts": 7192 },
-      { "rank": 9, "team": "Bangladesh", "rating": 218, "pts": 5886 }
-    ]
-  },
+  "icc-rankings": {},
   "leagues": {
     "ipl-2026": [
-      { "rank": 1, "team": "KKR", "fullName": "Kolkata Knight Riders", "p": 14, "w": 9, "l": 3, "nr": 2, "nrr": "+1.428", "pts": 20 },
-      { "rank": 2, "team": "SRH", "fullName": "Sunrisers Hyderabad", "p": 14, "w": 8, "l": 5, "nr": 1, "nrr": "+0.414", "pts": 17 },
-      { "rank": 3, "team": "RR", "fullName": "Rajasthan Royals", "p": 14, "w": 8, "l": 5, "nr": 1, "nrr": "+0.273", "pts": 17 },
-      { "rank": 4, "team": "RCB", "fullName": "Royal Challengers Bengaluru", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "+0.459", "pts": 14 },
-      { "rank": 5, "team": "CSK", "fullName": "Chennai Super Kings", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "+0.392", "pts": 14 },
-      { "rank": 6, "team": "DC", "fullName": "Delhi Capitals", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "-0.377", "pts": 14 },
-      { "rank": 7, "team": "LSG", "fullName": "Lucknow Super Giants", "p": 14, "w": 7, "l": 7, "nr": 0, "nrr": "-0.667", "pts": 14 },
-      { "rank": 8, "team": "GT", "fullName": "Gujarat Titans", "p": 14, "w": 5, "l": 7, "nr": 2, "nrr": "-1.063", "pts": 12 },
-      { "rank": 9, "team": "PBKS", "fullName": "Punjab Kings", "p": 14, "w": 5, "l": 9, "nr": 0, "nrr": "-0.353", "pts": 10 },
-      { "rank": 10, "team": "MI", "fullName": "Mumbai Indians", "p": 14, "w": 4, "l": 10, "nr": 0, "nrr": "-0.318", "pts": 8, "status": "Eliminated" }
+      {
+        "rank": 1,
+        "team": "RCB",
+        "fullName": "RCB",
+        "p": 12,
+        "w": 8,
+        "l": 4,
+        "nr": 0,
+        "pts": 16,
+        "nrr": "1.053"
+      },
+      {
+        "rank": 2,
+        "team": "GT",
+        "fullName": "GT",
+        "p": 12,
+        "w": 8,
+        "l": 4,
+        "nr": 0,
+        "pts": 16,
+        "nrr": "0.551"
+      },
+      {
+        "rank": 3,
+        "team": "SRH",
+        "fullName": "SRH",
+        "p": 12,
+        "w": 7,
+        "l": 5,
+        "nr": 0,
+        "pts": 14,
+        "nrr": "0.331"
+      },
+      {
+        "rank": 4,
+        "team": "PBKS",
+        "fullName": "PBKS",
+        "p": 12,
+        "w": 6,
+        "l": 5,
+        "nr": 1,
+        "pts": 13,
+        "nrr": "0.355"
+      },
+      {
+        "rank": 5,
+        "team": "CSK",
+        "fullName": "CSK",
+        "p": 11,
+        "w": 6,
+        "l": 5,
+        "nr": 0,
+        "pts": 12,
+        "nrr": "0.185"
+      },
+      {
+        "rank": 6,
+        "team": "RR",
+        "fullName": "RR",
+        "p": 11,
+        "w": 6,
+        "l": 5,
+        "nr": 0,
+        "pts": 12,
+        "nrr": "0.082"
+      },
+      {
+        "rank": 7,
+        "team": "DC",
+        "fullName": "DC",
+        "p": 12,
+        "w": 5,
+        "l": 7,
+        "nr": 0,
+        "pts": 10,
+        "nrr": "-0.993"
+      },
+      {
+        "rank": 8,
+        "team": "KKR",
+        "fullName": "KKR",
+        "p": 11,
+        "w": 4,
+        "l": 6,
+        "nr": 1,
+        "pts": 9,
+        "nrr": "-0.198"
+      },
+      {
+        "rank": 9,
+        "team": "MI",
+        "fullName": "MI",
+        "p": 12,
+        "w": 4,
+        "l": 8,
+        "nr": 0,
+        "pts": 8,
+        "nrr": "-0.504"
+      },
+      {
+        "rank": 10,
+        "team": "LSG",
+        "fullName": "LSG",
+        "p": 11,
+        "w": 3,
+        "l": 8,
+        "nr": 0,
+        "pts": 6,
+        "nrr": "-0.907"
+      }
     ],
     "psl-2025": [
-      { "rank": 1, "team": "LQ", "fullName": "Lahore Qalandars", "p": 10, "w": 7, "l": 3, "nr": 0, "nrr": "+0.682", "pts": 14 },
-      { "rank": 2, "team": "IU", "fullName": "Islamabad United", "p": 10, "w": 7, "l": 3, "nr": 0, "nrr": "+0.410", "pts": 14 },
-      { "rank": 3, "team": "MS", "fullName": "Multan Sultans", "p": 10, "w": 6, "l": 4, "nr": 0, "nrr": "+0.225", "pts": 12 },
-      { "rank": 4, "team": "PZ", "fullName": "Peshawar Zalmi", "p": 10, "w": 5, "l": 5, "nr": 0, "nrr": "-0.120", "pts": 10 },
-      { "rank": 5, "team": "QG", "fullName": "Quetta Gladiators", "p": 10, "w": 3, "l": 7, "nr": 0, "nrr": "-0.510", "pts": 6 },
-      { "rank": 6, "team": "KK", "fullName": "Karachi Kings", "p": 10, "w": 2, "l": 8, "nr": 0, "nrr": "-0.712", "pts": 4 }
+      {
+        "rank": 1,
+        "team": "LQ",
+        "fullName": "Lahore Qalandars",
+        "p": 10,
+        "w": 7,
+        "l": 3,
+        "nr": 0,
+        "nrr": "+0.682",
+        "pts": 14
+      },
+      {
+        "rank": 2,
+        "team": "IU",
+        "fullName": "Islamabad United",
+        "p": 10,
+        "w": 7,
+        "l": 3,
+        "nr": 0,
+        "nrr": "+0.410",
+        "pts": 14
+      },
+      {
+        "rank": 3,
+        "team": "MS",
+        "fullName": "Multan Sultans",
+        "p": 10,
+        "w": 6,
+        "l": 4,
+        "nr": 0,
+        "nrr": "+0.225",
+        "pts": 12
+      },
+      {
+        "rank": 4,
+        "team": "PZ",
+        "fullName": "Peshawar Zalmi",
+        "p": 10,
+        "w": 5,
+        "l": 5,
+        "nr": 0,
+        "nrr": "-0.120",
+        "pts": 10
+      },
+      {
+        "rank": 5,
+        "team": "QG",
+        "fullName": "Quetta Gladiators",
+        "p": 10,
+        "w": 3,
+        "l": 7,
+        "nr": 0,
+        "nrr": "-0.510",
+        "pts": 6
+      },
+      {
+        "rank": 6,
+        "team": "KK",
+        "fullName": "Karachi Kings",
+        "p": 10,
+        "w": 2,
+        "l": 8,
+        "nr": 0,
+        "nrr": "-0.712",
+        "pts": 4
+      }
     ],
     "bbl-2025-26": [
-      { "rank": 1, "team": "PS", "fullName": "Perth Scorchers", "p": 10, "w": 7, "l": 3, "nr": 0, "nrr": "+0.550", "pts": 14 },
-      { "rank": 2, "team": "SS", "fullName": "Sydney Sixers", "p": 10, "w": 6, "l": 4, "nr": 0, "nrr": "+0.380", "pts": 12 },
-      { "rank": 3, "team": "HH", "fullName": "Hobart Hurricanes", "p": 10, "w": 6, "l": 4, "nr": 0, "nrr": "+0.210", "pts": 12 },
-      { "rank": 4, "team": "BH", "fullName": "Brisbane Heat", "p": 10, "w": 5, "l": 5, "nr": 0, "nrr": "-0.050", "pts": 10 },
-      { "rank": 5, "team": "AS", "fullName": "Adelaide Strikers", "p": 10, "w": 4, "l": 6, "nr": 0, "nrr": "-0.320", "pts": 8 }
+      {
+        "rank": 1,
+        "team": "PS",
+        "fullName": "Perth Scorchers",
+        "p": 10,
+        "w": 7,
+        "l": 3,
+        "nr": 0,
+        "nrr": "+0.550",
+        "pts": 14
+      },
+      {
+        "rank": 2,
+        "team": "SS",
+        "fullName": "Sydney Sixers",
+        "p": 10,
+        "w": 6,
+        "l": 4,
+        "nr": 0,
+        "nrr": "+0.380",
+        "pts": 12
+      },
+      {
+        "rank": 3,
+        "team": "HH",
+        "fullName": "Hobart Hurricanes",
+        "p": 10,
+        "w": 6,
+        "l": 4,
+        "nr": 0,
+        "nrr": "+0.210",
+        "pts": 12
+      },
+      {
+        "rank": 4,
+        "team": "BH",
+        "fullName": "Brisbane Heat",
+        "p": 10,
+        "w": 5,
+        "l": 5,
+        "nr": 0,
+        "nrr": "-0.050",
+        "pts": 10
+      },
+      {
+        "rank": 5,
+        "team": "AS",
+        "fullName": "Adelaide Strikers",
+        "p": 10,
+        "w": 4,
+        "l": 6,
+        "nr": 0,
+        "nrr": "-0.320",
+        "pts": 8
+      }
     ],
     "cpl-2025": [
-      { "rank": 1, "team": "TKR", "fullName": "Trinbago Knight Riders", "p": 10, "w": 8, "l": 2, "nr": 0, "nrr": "+1.120", "pts": 16 },
-      { "rank": 2, "team": "GAW", "fullName": "Guyana Amazon Warriors", "p": 10, "w": 7, "l": 3, "nr": 0, "nrr": "+0.640", "pts": 14 },
-      { "rank": 3, "team": "BR", "fullName": "Barbados Royals", "p": 10, "w": 5, "l": 5, "nr": 0, "nrr": "+0.050", "pts": 10 },
-      { "rank": 4, "team": "SLK", "fullName": "Saint Lucia Kings", "p": 10, "w": 4, "l": 6, "nr": 0, "nrr": "-0.280", "pts": 8 }
+      {
+        "rank": 1,
+        "team": "TKR",
+        "fullName": "Trinbago Knight Riders",
+        "p": 10,
+        "w": 8,
+        "l": 2,
+        "nr": 0,
+        "nrr": "+1.120",
+        "pts": 16
+      },
+      {
+        "rank": 2,
+        "team": "GAW",
+        "fullName": "Guyana Amazon Warriors",
+        "p": 10,
+        "w": 7,
+        "l": 3,
+        "nr": 0,
+        "nrr": "+0.640",
+        "pts": 14
+      },
+      {
+        "rank": 3,
+        "team": "BR",
+        "fullName": "Barbados Royals",
+        "p": 10,
+        "w": 5,
+        "l": 5,
+        "nr": 0,
+        "nrr": "+0.050",
+        "pts": 10
+      },
+      {
+        "rank": 4,
+        "team": "SLK",
+        "fullName": "Saint Lucia Kings",
+        "p": 10,
+        "w": 4,
+        "l": 6,
+        "nr": 0,
+        "nrr": "-0.280",
+        "pts": 8
+      }
     ]
   }
 }
