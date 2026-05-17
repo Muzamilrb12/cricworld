@@ -315,7 +315,18 @@ export async function scrapeAllOnce() {
     }
 }
 
-// If run directly, run once and exit
-if (process.argv[1] === new URL(import.meta.url).pathname) {
-    scrapeAllOnce().then(() => process.exit(0));
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const isDirectRun = process.argv[1] === __filename || process.argv[1]?.endsWith('scraper.mjs');
+
+if (isDirectRun) {
+    console.log('🚀 Starting manual scrape of all data...');
+    scrapeAllOnce().then(() => {
+        console.log('✨ All scraping tasks completed successfully.');
+        process.exit(0);
+    }).catch(err => {
+        console.error('💥 Fatal Scraper Error:', err);
+        process.exit(1);
+    });
 }

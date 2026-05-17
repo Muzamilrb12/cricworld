@@ -51,6 +51,15 @@ export default function GoogleNewsFeed({
         : '/api/google-news';
 
       const res = await fetch(url, { cache: 'no-store' });
+      
+      if (!res.ok) {
+        throw new Error(`Server responded with ${res.status}`);
+      }
+
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Received non-JSON response from server");
+      }
 
       const data = await res.json();
 

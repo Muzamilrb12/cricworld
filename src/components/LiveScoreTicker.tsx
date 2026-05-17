@@ -8,6 +8,10 @@ export default function LiveScoreTicker() {
   const fetchLive = useCallback(async () => {
     try {
       const res = await fetch('/api/live-matches', { cache: 'no-store' });
+      if (!res.ok) return;
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) return;
+
       const json = await res.json();
       if (json.status === 'ok' && json.data && json.data.length > 0) {
         // Find first live (started, not ended) match

@@ -1,4 +1,9 @@
 import { NextResponse } from 'next/server';
+import fs from 'fs/promises';
+import path from 'path';
+
+export const dynamic = 'force-dynamic';
+
 /**
  * API route: GET /api/ipl-points
  * Retrieves the current IPL points table from ESPN Cricinfo.
@@ -34,10 +39,9 @@ export async function GET() {
     
     // Fallback to local scraped data
     try {
-      const fs = require('fs/promises');
-      const path = require('path');
       const ptPath = path.join(process.cwd(), 'data', 'points-table.json');
-      const localData = JSON.parse(await fs.readFile(ptPath, 'utf8'));
+      const fileContent = await fs.readFile(ptPath, 'utf8');
+      const localData = JSON.parse(fileContent);
       const iplPoints = localData.leagues['ipl-2026'] || [];
       
       return NextResponse.json({
@@ -64,4 +68,5 @@ export async function GET() {
     }
   }
 }
+
 

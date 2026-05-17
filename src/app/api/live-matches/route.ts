@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { fetchLiveMatches } from '@/lib/cricket-api';
 import { discoverLiveMatches } from '@/lib/collectors/matchDiscovery';
+import fs from 'fs/promises';
+import path from 'path';
+
+export const dynamic = 'force-dynamic';
 
 let cachedData: any = null;
 let lastFetchTime = 0;
@@ -37,10 +41,9 @@ export async function GET() {
     // FINAL FALLBACK: Local Scraped Data
     console.log('[API] Discovery failed, falling back to local matches.json...');
     try {
-      const fs = require('fs/promises');
-      const path = require('path');
       const matchesPath = path.join(process.cwd(), 'data', 'matches.json');
-      const localMatches = JSON.parse(await fs.readFile(matchesPath, 'utf8'));
+      const fileContent = await fs.readFile(matchesPath, 'utf8');
+      const localMatches = JSON.parse(fileContent);
       if (localMatches && localMatches.length > 0) {
         cachedData = {
           status: 'ok',
@@ -60,5 +63,6 @@ export async function GET() {
   lastFetchTime = Date.now();
   return NextResponse.json({ ...result, cache_status: 'miss' });
 }
+
 
 

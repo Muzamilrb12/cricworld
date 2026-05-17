@@ -3,7 +3,27 @@
 import useSWR from "swr";
 import MatchCard from "./MatchCard";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = async (url: string) => {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error(`[Fetcher Error] ${url} returned ${res.status}:`, errorText.substring(0, 100));
+      throw new Error(`Failed to fetch: ${res.status}`);
+    }
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      const text = await res.text();
+      console.error(`[Fetcher Error] ${url} returned non-JSON:`, text.substring(0, 100));
+      throw new Error("Expected JSON response but received HTML/Text");
+    }
+    return res.json();
+  } catch (err) {
+    console.error(`[Fetcher Exception] ${url}:`, err);
+    throw err;
+  }
+};
+
 
 export default function LiveMatchesFeed() {
   const { data, error, isLoading } = useSWR("/api/live-matches", fetcher, {
