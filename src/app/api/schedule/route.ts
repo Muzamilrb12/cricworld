@@ -1,7 +1,7 @@
-// src/app/api/rankings/route.ts
+// src/app/api/schedule/route.ts
 
 import { NextResponse } from 'next/server';
-import { fetchRankings } from '@/lib/cricket-api';
+import { fetchSchedule } from '@/lib/cricket-api';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,16 +10,16 @@ let lastFetch = 0;
 
 export async function GET() {
   const now = Date.now();
-  // Cache for 15 minutes (900 seconds)
-  if (cached && now - lastFetch < 15 * 60 * 1000) {
+  // cache for 10 minutes
+  if (cached && now - lastFetch < 10 * 60 * 1000) {
     return NextResponse.json({
       ...cached,
       cache_status: 'hit',
-      expires_in: `${Math.max(0, 900 - Math.floor((now - lastFetch) / 1000))}s`
+      expires_in: `${Math.max(0, 600 - Math.floor((now - lastFetch) / 1000))}s`
     });
   }
 
-  const result = await fetchRankings();
+  const result = await fetchSchedule();
   cached = result;
   lastFetch = Date.now();
   return NextResponse.json({ ...result, cache_status: 'miss' });
